@@ -1,6 +1,5 @@
-﻿"use client";
+"use client";
 import Image from 'next/image';
-
 import { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
@@ -35,7 +34,7 @@ export default function HeritageGuide() {
                     }
                 ]);
                 setIsTyping(false);
-            }, 800);
+            }, 600);
         }
     }, [isOpen, messages.length, t, lang]);
 
@@ -58,27 +57,27 @@ export default function HeritageGuide() {
         const isHindi = effectiveLang === 'hi' || /[\u0900-\u097F]/.test(query);
 
         // 0. Language / Greeting Detection
-        if (['hindi', 'à¤¹à¤¿à¤‚à¤¦à¥€', 'à¤¹à¤¿à¤¨à¥à¤¦à¥€'].includes(lowerQuery)) {
+        if (['hindi', 'हिंदी', 'हिन्दी'].includes(lowerQuery)) {
             return {
-                text: "à¤¨à¤¿à¤¶à¥à¤šà¤¿à¤¤ à¤°à¥‚à¤ª à¤¸à¥‡! à¤…à¤¬ à¤®à¥ˆà¤‚ à¤†à¤ªà¤¸à¥‡ à¤¹à¤¿à¤‚à¤¦à¥€ à¤®à¥‡à¤‚ à¤¬à¤¾à¤¤ à¤•à¤°à¥‚à¤à¤—à¤¾à¥¤ à¤®à¥ˆà¤‚ à¤†à¤ªà¤•à¥€ à¤•à¥ˆà¤¸à¥‡ à¤®à¤¦à¤¦ à¤•à¤° à¤¸à¤•à¤¤à¤¾ à¤¹à¥‚à¤? âœ¨ [AI à¤®à¤¾à¤°à¥à¤—à¤¦à¤°à¥à¤¶à¤•]",
+                text: "निश्चित रूप से! अब मैं आपसे हिंदी में बात करूँगा। मैं आपकी कैसे मदद कर सकता हूँ? ✨ [AI मार्गदर्शक]",
                 isHindi: true
             };
         }
-        if (['english', 'à¤…à¤‚à¤—à¥à¤°à¥‡à¤œà¥€', 'à¤…à¤‚à¤—à¥à¤°à¥‡à¤œà¤¼à¥€'].includes(lowerQuery)) {
+        if (['english', 'अंग्रेजी', 'अंग्रेज़ी'].includes(lowerQuery)) {
             return {
-                text: "Of course! I will now converse with you in English. How can I help you explore Chittorgarh? âœ¨ [AI Guide]",
+                text: "Of course! I will now converse with you in English. How can I help you explore Chittorgarh? ✨ [AI Guide]",
                 isHindi: false
             };
         }
         
-        const isGreetings = /^(hi|hello|hey|à¤¨à¤®à¤¸à¥à¤¤à¥‡|à¤ªà¥à¤°à¤£à¤¾à¤®|hey|hi there)/i.test(lowerQuery) || 
-                          ['hello', 'hi', 'namaste', 'à¤¨à¤®à¤¸à¥à¤¤à¥‡', 'hey'].includes(lowerQuery);
+        const isGreetings = /^(hi|hello|hey|नमस्ते|प्रणाम|hey|hi there)/i.test(lowerQuery) || 
+                          ['hello', 'hi', 'namaste', 'नमस्ते', 'hey'].includes(lowerQuery);
         
         if (isGreetings) {
              return {
                 text: isHindi 
-                    ? "à¤¨à¤®à¤¸à¥à¤¤à¥‡! à¤®à¥ˆà¤‚ à¤šà¤¿à¤¤à¥à¤¤à¥Œà¤¡à¤¼à¤—à¤¢à¤¼ à¤•à¤¾ AI à¤®à¤¾à¤°à¥à¤—à¤¦à¤°à¥à¤¶à¤• à¤¹à¥‚à¤à¥¤ à¤®à¥ˆà¤‚ à¤‡à¤¸ à¤®à¤¹à¤¾à¤¨ à¤µà¤¿à¤°à¤¾à¤¸à¤¤ à¤•à¥‹ à¤–à¥‹à¤œà¤¨à¥‡ à¤®à¥‡à¤‚ à¤†à¤ªà¤•à¥€ à¤¸à¤¹à¤¾à¤¯à¤¤à¤¾ à¤•à¤° à¤¸à¤•à¤¤à¤¾ à¤¹à¥‚à¤à¥¤ à¤†à¤ª à¤•à¥à¤¯à¤¾ à¤œà¤¾à¤¨à¤¨à¤¾ à¤šà¤¾à¤¹à¥‡à¤‚à¤—à¥‡? âœ¨"
-                    : "Greetings! I am the AI Guide of Chittorgarh. I can assist you in exploring this great heritage. What would you like to know? âœ¨",
+                    ? "नमस्ते! मैं चित्तौड़गढ़ का AI मार्गदर्शक हूँ। मैं इस महान विरासत को खोजने में आपकी सहायता कर सकता हूँ। आप क्या जानना चाहेंगे? ✨"
+                    : "Greetings! I am the AI Guide of Chittorgarh. I can assist you in exploring this great heritage. What would you like to know? ✨",
                 isHindi: isHindi
              };
         }
@@ -110,16 +109,16 @@ export default function HeritageGuide() {
         if (!bestMatch || maxScore < 2) {
             return {
                 text: isHindi 
-                    ? "à¤®à¥ˆà¤‚ à¤†à¤ªà¤•à¥‡ à¤ªà¥à¤°à¤¶à¥à¤¨ à¤•à¤¾ à¤‰à¤¤à¥à¤¤à¤° à¤¦à¥‡à¤¨à¥‡ à¤®à¥‡à¤‚ à¤…à¤¸à¤®à¤°à¥à¤¥ à¤¹à¥‚à¤à¥¤ à¤¯à¤¹ à¤šà¤¿à¤¤à¥à¤¤à¥Œà¤¡à¤¼à¤—à¤¢à¤¼ à¤•à¥‡ à¤¬à¤¾à¤°à¥‡ à¤®à¥‡à¤‚ à¤®à¥‡à¤°à¥‡ à¤†à¤§à¤¿à¤•à¤¾à¤°à¤¿à¤• à¤¡à¥‡à¤Ÿà¤¾ à¤¸à¥‡ à¤¬à¤¾à¤¹à¤° à¤¹à¥ˆà¥¤ à¤•à¥ƒà¤ªà¤¯à¤¾ à¤µà¤¿à¤°à¤¾à¤¸à¤¤ à¤¯à¤¾ à¤¸à¥à¤®à¤¾à¤°à¤•à¥‹à¤‚ à¤•à¥‡ à¤¬à¤¾à¤°à¥‡ à¤®à¥‡à¤‚ à¤ªà¥‚à¤›à¥‡à¤‚à¥¤"
+                    ? "मैं आपके प्रश्न का उत्तर देने में असमर्थ हूँ। यह चित्तौड़गढ़ के बारे में मेरे आधिकारिक डेटा से बाहर है। कृपया विरासत या स्मारकों के बारे में पूछें।"
                     : "I am not able to answer your query. It is away from my official data about Chittorgarh heritage. Please ask about monuments or history.",
                 isHindi: isHindi
             };
         }
 
-        // 3. Authentic Response (Markdown links handled by renderMessage)
+        // 3. Authentic Response
         const responseCtx = isHindi ? (bestMatch.hi || bestMatch.en) : bestMatch.en;
         return {
-            text: responseCtx + " âœ¨ [AI Guide]",
+            text: responseCtx + " ✨ [AI Guide]",
             isHindi: isHindi
         };
     };
@@ -142,19 +141,16 @@ export default function HeritageGuide() {
         setIsTyping(true);
         triggerHaptic("medium");
 
-        // Artificial delay for "royal thinking"
         setTimeout(() => {
-            const { KNOWLEDGE_BASE } = require("@/lib/chat-knowledge");
             const lowerQuery = input.toLowerCase().trim();
             const hasHindi = /[\u0900-\u097F]/.test(input);
             
             let effectiveLang = hasHindi ? 'hi' : chatLang;
 
-            // Handle explicit language switch
-            if (['hindi', 'à¤¹à¤¿à¤‚à¤¦à¥€', 'à¤¹à¤¿à¤¨à¥à¤¦à¥€'].includes(lowerQuery)) {
+            if (['hindi', 'हिंदी', 'हिन्दी'].includes(lowerQuery)) {
                 setChatLang('hi');
                 effectiveLang = 'hi';
-            } else if (['english', 'à¤…à¤‚à¤—à¥à¤°à¥‡à¤œà¥€', 'à¤…à¤‚à¤—à¥à¤°à¥‡à¤œà¤¼à¥€'].includes(lowerQuery)) {
+            } else if (['english', 'अंग्रेजी', 'अंग्रेज़ी'].includes(lowerQuery)) {
                 setChatLang('en');
                 effectiveLang = 'en';
             }
@@ -177,7 +173,6 @@ export default function HeritageGuide() {
     const handleQuickAction = (actionKey) => {
         const actionText = t(actionKey);
         setInputValue(actionText);
-        // We set input but state might not update fast enough, so we pass text directly
         const userMsg = {
             id: Date.now(),
             text: actionText,
@@ -210,12 +205,10 @@ export default function HeritageGuide() {
     const renderMessage = (msg) => {
         const { text, isHindi } = msg;
         if (!text) return null;
-        // Simple regex to match [Link Name](URL)
         const parts = text.split(/(\[.*?\]\(.*?\))/g);
         return parts.map((part, i) => {
             const match = part && part.match(/\[(.*?)\]\((.*?)\)/);
             if (match) {
-                // Make link relative to current origin and append language
                 let linkUrl = match[2].replace('https://chittorgarh-tourism.in', '');
                 linkUrl = `${linkUrl}${linkUrl.includes('?') ? '&' : '?'}lang=${isHindi ? 'hi' : 'en'}`;
 
@@ -226,9 +219,7 @@ export default function HeritageGuide() {
                         className="chat-link"
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={(e) => {
-                            triggerHaptic('light');
-                        }}
+                        onClick={() => triggerHaptic('light')}
                     >
                         {match[1]}
                     </a>
@@ -241,15 +232,18 @@ export default function HeritageGuide() {
     return (
         <div className="heritage-guide-container">
             {/* Toggle Button */}
-            <div className="guide-toggle" onClick={toggleGuide}>
+            <div className="guide-toggle" onClick={toggleGuide} title="Heritage Guide Chatbot" role="button" tabIndex={0}>
                 {isOpen ? (
-                    <span className="guide-icon">âœ•</span>
+                    <span className="guide-icon">✕</span>
                 ) : (
                     <Image
                         src="/vijay_stambh.jpg"
                         alt="Guide"
                         className="guide-image"
-                     width={1200} height={800} style={{ objectFit: "cover" }}/>
+                        width={60}
+                        height={60}
+                        style={{ objectFit: "cover" }}
+                    />
                 )}
             </div>
 
@@ -257,7 +251,7 @@ export default function HeritageGuide() {
             {isOpen && (
                 <div className="chat-window">
                     <div className="chat-header">
-                        <div className="bot-avatar">ðŸ”±</div>
+                        <div className="bot-avatar">✨</div>
                         <div className="bot-info">
                             <h3>{t("bot.name")}</h3>
                             <div className="bot-status">
@@ -265,7 +259,7 @@ export default function HeritageGuide() {
                                 {t("bot.status.online")}
                             </div>
                         </div>
-                        <button className="close-btn" onClick={() => setIsOpen(false)}>Ã—</button>
+                        <button className="close-btn" onClick={() => setIsOpen(false)} aria-label="Close Chat">✕</button>
                     </div>
 
                     <div className="chat-messages" ref={scrollRef}>
@@ -303,7 +297,7 @@ export default function HeritageGuide() {
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
                         />
-                        <button type="submit" className="send-btn">
+                        <button type="submit" className="send-btn" aria-label="Send message">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <line x1="22" y1="2" x2="11" y2="13"></line>
                                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
@@ -315,4 +309,3 @@ export default function HeritageGuide() {
         </div>
     );
 }
-

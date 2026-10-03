@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Image from 'next/image';
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
@@ -8,23 +8,52 @@ import { Map, Zap, Headphones, Castle, Shield, Droplets, Award, ArrowUpRight } f
 
 import FAQ from "./FAQ";
 import QRScannerButton from "./QRScannerButton";
-import HeroCarousel from "./HeroCarousel";
 
 export default function HomeClient() {
     const { t } = useLanguage();
     
     return (
         <div className="home-page-container">
-            {/* â•â•â• NEW IMAGE CAROUSEL â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
-            <HeroCarousel />
+            {/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â NEW IMAGE CAROUSEL Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */}
 
-            {/* â•â•â• FIXED BACKGROUND â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
-            <div className="fixed-bg"></div>
-            <div className="bg-overlay"></div>
 
-            {/* â•â•â• HERO SECTION â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+            {/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â FIXED BACKGROUND Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */}
+
+
+            {/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â HERO SECTION Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */}
             <header id="home" className="editorial-hero" style={{ padding: "2rem 1.5rem 1rem", justifyContent: "center" }}>
                 <div className="editorial-content" style={{ textAlign: "center", width: "100%" }}>
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="editorial-eyebrow"
+                        style={{ justifyContent: "center" }}
+                    >
+                        <span className="sparkle">✦</span>
+                        <span>{t("hero.badge")}</span>
+                    </motion.div>
+                    
+                    <motion.h1 
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.1 }}
+                        className="editorial-title"
+                    >
+                        <span className="ed-line1">{t("hero.line1")}</span>
+                        <span className="ed-line2">{t("hero.line2")}</span>
+                    </motion.h1>
+                    
+                    <motion.p 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.15 }}
+                        className="editorial-sub"
+                        style={{ margin: "0 auto 2.5rem" }}
+                    >
+                        {t("hero.sub")}
+                    </motion.p>
+
                     <motion.div 
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -42,7 +71,7 @@ export default function HomeClient() {
                 </div>
             </header>
 
-            {/* â•â•â• LIVE FORT STATS BAR â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+            {/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â LIVE FORT STATS BAR Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */}
             <section className="stats-bar-section">
                 <div className="container">
                     <div className="stats-grid">
@@ -89,7 +118,7 @@ export default function HomeClient() {
                 </div>
             </section>
 
-            {/* â•â•â• SIGNATURE HIGHLIGHTS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+            {/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â SIGNATURE HIGHLIGHTS Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */}
             <section className="highlights-section">
                 <div className="container">
                     <header className="section-header">
@@ -138,7 +167,7 @@ export default function HomeClient() {
                 </div>
             </section>
 
-            {/* â•â•â• DIGITAL COMPANION FEATURES â•â•â•â•â•â•â•â•â•â•â•â• */}
+            {/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â DIGITAL COMPANION FEATURES Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */}
             <section className="smart-features-section">
                 <div className="container">
                     <header className="section-header">
@@ -178,7 +207,7 @@ export default function HomeClient() {
                 </div>
             </section>
 
-            {/* â•â•â• QUOTE BAND â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+            {/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â QUOTE BAND Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */}
             <section className="quote-band">
                 <div className="container">
                     <motion.blockquote 
@@ -195,12 +224,12 @@ export default function HomeClient() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
                     >
-                        â€” {t("quote.cite")}
+                        Ã¢â‚¬â€ {t("quote.cite")}
                     </motion.cite>
                 </div>
             </section>
 
-            {/* â•â•â• CTA SECTION â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+            {/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â CTA SECTION Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */}
             <section className="cta-section" id="contact">
                 <div className="container">
                     <div className="cta-card-luxury">
@@ -236,16 +265,16 @@ export default function HomeClient() {
                 </div>
             </section>
 
-            {/* â•â•â• FAQ SECTION â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+            {/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â FAQ SECTION Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */}
             <FAQ />
 
-            {/* â•â•â• LUXURY DARK OBSIDIAN & GOLD THEME CSS â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+            {/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â LUXURY DARK OBSIDIAN & GOLD THEME CSS Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */}
             <style jsx global>{`
                 .home-page-container {
                     position: relative;
                     min-height: 100vh;
                     background: transparent;
-                    color: #FFFFFF;
+                    color: var(--text-main);
                     font-family: var(--ff-body), sans-serif;
                 }
 
@@ -288,11 +317,11 @@ export default function HomeClient() {
                     text-transform: uppercase;
                     letter-spacing: 0.25em;
                     font-weight: 700;
-                    color: #D4AF37;
+                    color: #8A682F;
                     margin-bottom: 0.85rem;
                     padding: 0.35rem 1rem;
-                    background: rgba(212, 175, 55, 0.1);
-                    border: 1px solid rgba(212, 175, 55, 0.3);
+                    background: var(--sandstone);
+                    border: 1px solid var(--border-mid);
                     border-radius: 999px;
                     max-width: 100%;
                 }
@@ -302,9 +331,9 @@ export default function HomeClient() {
                     font-size: clamp(1.65rem, 5vw, 3.4rem);
                     font-weight: 800;
                     margin-bottom: 1rem;
-                    background: linear-gradient(135deg, #FFFFFF 0%, #F3E5AB 50%, #D4AF37 100%);
+                    background: none; color: var(--text-main);
                     -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    
                     line-height: 1.35;
                     word-break: break-word;
                     overflow-wrap: break-word;
@@ -322,7 +351,7 @@ export default function HomeClient() {
                 .section-desc {
                     max-width: 650px;
                     margin: 0.8rem auto 0;
-                    color: rgba(255, 255, 255, 0.85);
+                    color: var(--text-muted);
                     font-size: 1.05rem;
                     line-height: 1.7;
                     font-weight: 400;
@@ -331,34 +360,34 @@ export default function HomeClient() {
                 /* EDITORIAL HERO SECTION */
                 .editorial-hero {
                     position: relative;
-                    min-height: auto;
+                    min-height: clamp(500px, 85vh, 900px);
                     display: flex;
                     align-items: center;
-                    justify-content: flex-start;
-                    background: transparent;
-                    padding: 5rem 2rem 5rem;
+                    justify-content: center;
+                    background: linear-gradient(135deg, #181512 0%, #2A241C 50%, #0A0806 100%);
+                    box-shadow: inset 0 0 150px rgba(0,0,0,0.8);
+                    border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+                    padding: 8rem 2rem 5rem;
                     overflow: hidden;
-                    max-width: 1200px;
-                    margin: 0 auto;
+                    width: 100%;
                 }
-
-                .hero-ambient-glow {
+                
+                .editorial-hero::before {
+                    content: '';
                     position: absolute;
-                    top: 25%;
-                    left: 20%;
-                    transform: translate(-50%, -50%);
-                    width: 600px;
-                    height: 600px;
-                    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+                    inset: 0;
+                    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
                     pointer-events: none;
-                    z-index: 2;
                 }
 
                 .editorial-content {
                     position: relative;
                     z-index: 3;
-                    text-align: left;
-                    max-width: 750px;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    max-width: 800px;
                 }
 
                 .editorial-eyebrow {
@@ -368,18 +397,21 @@ export default function HomeClient() {
                     font-size: 0.8rem;
                     letter-spacing: 0.15em;
                     text-transform: uppercase;
-                    color: #D4AF37;
+                    color: var(--gold-light);
                     margin-bottom: 1.25rem;
-                    font-weight: 600;
+                    font-weight: 700;
+                    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
                 }
 
-                .sparkle { color: #D4AF37; }
+                .sparkle { color: var(--gold-light); }
 
                 .editorial-title {
                     font-family: var(--ff-display), serif;
                     margin-bottom: 1.5rem;
                     display: flex;
                     flex-direction: column;
+                    text-align: center;
+                    align-items: center;
                 }
 
                 .ed-line1 {
@@ -388,7 +420,8 @@ export default function HomeClient() {
                     font-weight: 400;
                     line-height: 1.1;
                     letter-spacing: -0.01em;
-                    color: #FAF7F2;
+                    color: #FFFFFF;
+                    text-shadow: 0 4px 16px rgba(0,0,0,0.8);
                 }
 
                 .ed-line2 {
@@ -396,20 +429,21 @@ export default function HomeClient() {
                     font-size: clamp(2.5rem, 8vw, 4.5rem);
                     font-style: normal;
                     font-weight: 700;
-                    background: linear-gradient(135deg, #FFF 0%, #D4AF37 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    color: var(--gold-light);
                     line-height: 1.1;
                     margin-top: 0.2rem;
+                    text-shadow: 0 4px 16px rgba(0,0,0,0.8);
                 }
 
                 .editorial-sub {
                     font-size: clamp(1.05rem, 2vw, 1.25rem);
-                    color: rgba(255, 255, 255, 0.85);
-                    max-width: 600px;
+                    color: rgba(255, 255, 255, 0.95);
+                    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+                    max-width: 650px;
                     margin-bottom: 2.5rem;
                     line-height: 1.6;
-                    font-weight: 300;
+                    font-weight: 500;
+                    text-align: center;
                 }
 
                 .editorial-actions {
@@ -465,17 +499,16 @@ export default function HomeClient() {
                     background: rgba(212, 175, 55, 0.18);
                     border-color: #D4AF37;
                     transform: translateY(-3px);
-                    color: #FFF;
+                    color: var(--text-main);
                     box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.3);
                 }
 
                 /* STATS BAR */
                 .stats-bar-section {
                     padding: 2.5rem 0;
-                    background: rgba(15, 10, 6, 0.3);
-                    backdrop-filter: blur(10px);
-                    border-top: 1px solid rgba(212, 175, 55, 0.25);
-                    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+                    background: var(--sandstone);
+                    border-top: 1px solid var(--border-light);
+                    border-bottom: 1px solid var(--border-light);
                 }
 
                 .stats-grid {
@@ -489,29 +522,29 @@ export default function HomeClient() {
                     align-items: center;
                     gap: 1rem;
                     padding: 1.25rem 1.5rem;
-                    background: rgba(15, 10, 6, 0.55);
-                    backdrop-filter: blur(12px);
-                    border: 1px solid rgba(212, 175, 55, 0.35);
-                    border-radius: 16px;
+                    background: var(--ivory);
+                    border: 1px solid var(--border-light);
+                    border-radius: var(--radius-md);
                     transition: all 0.3s ease;
+                    box-shadow: var(--shadow-sm);
                 }
 
                 .stat-card:hover {
-                    border-color: rgba(212, 175, 55, 0.7);
+                    border-color: var(--border-mid);
                     transform: translateY(-4px);
-                    box-shadow: 0 12px 30px -10px rgba(212, 175, 55, 0.3);
+                    box-shadow: var(--shadow-md);
                 }
 
                 .stat-icon-wrapper {
                     width: 46px;
                     height: 46px;
                     border-radius: 12px;
-                    background: rgba(212, 175, 55, 0.25);
-                    border: 1px solid rgba(212, 175, 55, 0.5);
+                    background: rgba(176, 138, 74, 0.1);
+                    border: 1px solid var(--border-light);
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    color: #F5E6AB;
+                    color: var(--gold);
                     flex-shrink: 0;
                 }
 
@@ -519,17 +552,15 @@ export default function HomeClient() {
                     font-family: var(--ff-display), serif;
                     font-size: 1.3rem;
                     font-weight: 800;
-                    color: #F5E6AB;
+                    color: var(--charcoal);
                     line-height: 1.2;
-                    text-shadow: 0 2px 10px rgba(0,0,0,0.9);
                 }
 
                 .stat-lbl {
                     font-size: 0.75rem;
-                    color: #FFFFFF;
+                    color: var(--text-muted);
                     font-weight: 600;
                     margin-top: 0.15rem;
-                    text-shadow: 0 1px 6px rgba(0,0,0,0.9);
                 }
 
                 /* HIGHLIGHTS GRID */
@@ -540,21 +571,20 @@ export default function HomeClient() {
                 }
 
                 .highlight-card {
-                    background: rgba(20, 14, 8, 0.4) !important;
-                    backdrop-filter: blur(8px);
-                    border: 1px solid rgba(212, 175, 55, 0.15);
-                    border-radius: 12px;
+                    background: var(--ivory) !important;
+                    border: 1px solid var(--border-light);
+                    border-radius: var(--radius-md);
                     overflow: hidden;
-                    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+                    transition: var(--transition);
                     display: flex;
                     flex-direction: column;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                    box-shadow: var(--shadow-sm);
                 }
 
                 .highlight-card:hover {
                     transform: translateY(-5px);
-                    border-color: rgba(212, 175, 55, 0.5);
-                    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.1);
+                    border-color: var(--border-mid);
+                    box-shadow: var(--shadow-md);
                 }
 
                 .card-image-wrapper {
@@ -576,9 +606,7 @@ export default function HomeClient() {
                 }
 
                 .card-overlay {
-                    position: absolute;
-                    inset: 0;
-                    background: linear-gradient(to bottom, transparent 40%, rgba(20, 14, 8, 0.5) 100%);
+                    display: none;
                 }
 
                 .card-content {
@@ -592,14 +620,14 @@ export default function HomeClient() {
                 .card-content h3 {
                     font-family: var(--ff-display), serif;
                     font-size: 1.35rem;
-                    font-weight: 600;
-                    color: #FFF;
+                    font-weight: 700;
+                    color: var(--text-main);
                     margin-bottom: 0.5rem;
                 }
 
                 .card-content p {
-                    color: rgba(255, 255, 255, 0.7);
-                    font-size: 0.9rem;
+                    color: var(--text-muted);
+                    font-size: 0.95rem;
                     line-height: 1.5;
                 }
 
@@ -608,7 +636,7 @@ export default function HomeClient() {
                     display: inline-flex;
                     align-items: center;
                     gap: 0.4rem;
-                    color: #D4AF37;
+                    color: #8A682F;
                     font-size: 0.8rem;
                     font-weight: 700;
                     letter-spacing: 0.15em;
@@ -618,7 +646,7 @@ export default function HomeClient() {
                 }
 
                 .explore-btn:hover {
-                    color: #FFF;
+                    color: var(--text-main);
                 }
 
                 /* FEATURES GRID */
@@ -629,70 +657,65 @@ export default function HomeClient() {
                 }
 
                 .feature-card {
-                    background: rgba(20, 14, 8, 0.78) !important;
-                    backdrop-filter: blur(16px);
-                    border: 1px solid rgba(212, 175, 55, 0.3);
-                    border-radius: 16px;
-                    padding: 1.75rem 1.5rem;
+                    background: var(--sandstone) !important;
+                    border: 1px solid var(--border-light);
+                    border-radius: var(--radius-md);
+                    padding: 2rem 1.5rem;
                     text-align: center;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+                    transition: var(--transition);
+                    box-shadow: var(--shadow-sm);
                 }
 
                 .feature-card:hover {
                     transform: translateY(-5px);
-                    border-color: rgba(212, 175, 55, 0.7);
-                    box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.7);
+                    border-color: var(--border-mid);
+                    box-shadow: var(--shadow-md);
                 }
 
                 .feature-icon {
-                    color: #D4AF37;
-                    margin-bottom: 1rem;
-                    width: 48px;
-                    height: 48px;
-                    border-radius: 14px;
-                    background: rgba(212, 175, 55, 0.15);
-                    border: 1px solid rgba(212, 175, 55, 0.4);
+                    color: var(--gold);
+                    margin-bottom: 1.25rem;
+                    width: 56px;
+                    height: 56px;
+                    border-radius: 50%;
+                    background: rgba(176, 138, 74, 0.1);
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.2);
                 }
 
                 .feature-card h3 {
                     font-family: var(--ff-display), serif;
-                    font-size: 1.2rem !important;
-                    font-weight: 800;
-                    color: #FFF;
-                    margin-bottom: 0.5rem;
+                    font-size: 1.25rem !important;
+                    font-weight: 700;
+                    color: var(--text-main);
+                    margin-bottom: 0.75rem;
                 }
 
                 .feature-card p {
-                    color: rgba(255, 255, 255, 0.82);
-                    font-size: 0.88rem;
-                    line-height: 1.5;
+                    color: var(--text-muted);
+                    font-size: 0.95rem;
+                    line-height: 1.6;
                 }
 
                 /* QUOTE BAND */
                 .quote-band {
-                    background: linear-gradient(180deg, rgba(15, 10, 6, 0.5) 0%, rgba(20, 14, 8, 0.75) 50%, rgba(15, 10, 6, 0.5) 100%);
+                    background: var(--charcoal);
                     text-align: center;
-                    padding: 3rem 0;
-                    border-top: 1px solid rgba(212, 175, 55, 0.25);
-                    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+                    padding: 4rem 0;
                 }
 
                 .quote-text {
                     font-family: var(--ff-display), serif;
                     font-size: clamp(1.15rem, 2.8vw, 1.85rem);
                     font-style: italic;
-                    color: #F3E5AB;
+                    color: var(--ivory);
                     max-width: 850px;
                     margin: 0 auto 1rem;
-                    font-weight: 600;
+                    font-weight: 400;
                     line-height: 1.4;
                 }
 
@@ -700,41 +723,44 @@ export default function HomeClient() {
                     font-size: 0.85rem;
                     letter-spacing: 0.15em;
                     text-transform: uppercase;
-                    color: rgba(212, 175, 55, 0.9);
+                    color: var(--gold-light);
                     font-weight: 600;
                     font-style: normal;
                 }
 
                 /* CTA CARD */
                 .cta-card-luxury {
-                    background: linear-gradient(135deg, rgba(25, 18, 11, 0.85) 0%, rgba(15, 10, 6, 0.9) 100%);
-                    backdrop-filter: blur(16px);
-                    border: 1px solid rgba(212, 175, 55, 0.4);
-                    border-radius: 20px;
-                    padding: 2.25rem 2rem;
+                    background: var(--charcoal);
+                    border-radius: var(--radius-lg);
+                    padding: 3rem 2rem;
                     text-align: center;
-                    box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+                    box-shadow: var(--shadow-md);
                 }
 
                 .cta-title {
                     font-family: var(--ff-display), serif;
                     font-size: clamp(1.5rem, 3.5vw, 2.35rem);
-                    font-weight: 900;
+                    font-weight: 700;
                     margin-top: 0.5rem;
                     margin-bottom: 0.5rem;
-                    background: linear-gradient(135deg, #FFF 0%, #F3E5AB 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    color: var(--ivory);
                 }
 
                 /* RESPONSIVE MOBILE FIXES */
                 @media (max-width: 640px) {
                     section {
-                        padding: 1.5rem 0;
+                        padding: 2.5rem 0;
                     }
                     .editorial-hero {
-                        padding: 3rem 1rem 2rem;
-                        text-align: left;
+                        padding: 7rem 1.5rem 3rem;
+                    }
+                    .editorial-eyebrow {
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        text-align: center;
+                        font-size: 0.7rem;
+                        letter-spacing: 0.1em;
+                        line-height: 1.4;
                     }
                     .editorial-actions {
                         flex-direction: column;
@@ -827,7 +853,7 @@ export default function HomeClient() {
                     }
                 }
 
-                /* â•â•â•â• HINDI SPECIFIC REFINEMENTS â•â•â•â• */
+                /* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â HINDI SPECIFIC REFINEMENTS Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
                 :global([data-lang="hi"]) .hero-eyebrow-badge {
                     letter-spacing: normal !important;
                     font-size: 0.82rem;
@@ -911,6 +937,8 @@ function FeatureCard({ icon, title, desc, delay }) {
         </motion.div>
     );
 }
+
+
 
 
 

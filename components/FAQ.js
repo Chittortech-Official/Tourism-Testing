@@ -1,7 +1,8 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { Plus, Minus } from "lucide-react";
 
 export default function FAQ() {
     const { t } = useLanguage();
@@ -67,7 +68,7 @@ export default function FAQ() {
                             <div className="faq-question">
                                 <h3>{faq.q}</h3>
                                 <span className="faq-icon">
-                                    {openIndex === index ? "âˆ’" : "+"}
+                                    {openIndex === index ? <Minus size={18} /> : <Plus size={18} />}
                                 </span>
                             </div>
                             <div
@@ -141,10 +142,6 @@ export default function FAQ() {
 
                 .faq-icon {
                     color: var(--gold);
-                    font-size: 1.2rem;
-                    font-weight: 300;
-                    width: 20px;
-                    height: 20px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -187,4 +184,3 @@ export default function FAQ() {
         </section>
     );
 }
-

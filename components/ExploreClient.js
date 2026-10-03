@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Image from 'next/image';
 import { useLanguage } from "@/context/LanguageContext";
 import {
@@ -509,15 +509,15 @@ export default function ExploreClient() {
                     font-size: 0.7rem;
                     letter-spacing: 0.18em;
                     text-transform: uppercase;
-                    color: #F5E6AB;
+                    color: #8A682F;
                     padding: 0.4rem 1.1rem;
-                    background: rgba(15, 10, 6, 0.85);
+                    background: var(--sandstone);
                     backdrop-filter: blur(10px);
-                    border: 1px solid rgba(212, 175, 55, 0.45);
+                    border: 1px solid var(--border-mid);
                     border-radius: 999px;
                     margin-bottom: 1rem;
                     font-weight: 700;
-                    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
                 }
 
                 .sparkle-gold {
@@ -529,21 +529,21 @@ export default function ExploreClient() {
                     font-family: var(--ff-display), serif;
                     font-weight: 800;
                     margin-bottom: 0.6rem;
-                    background: linear-gradient(135deg, #FFFFFF 0%, #F5E6AB 50%, #D4AF37 100%);
+                    background: linear-gradient(135deg, #1C1B19 0%, #3A3732 50%, #8A682F 100%);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     line-height: 1.15;
-                    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.9));
+                    filter: none;
                 }
 
                 .subtitle-royal {
                     max-width: 640px;
                     margin: 0 auto 1.2rem;
-                    color: #FFFFFF;
+                    color: var(--text-muted);
                     font-size: 0.98rem;
                     line-height: 1.6;
                     font-weight: 400;
-                    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
+                    text-shadow: none;
                 }
 
                 .gold-divider-luxury {
@@ -627,29 +627,28 @@ export default function ExploreClient() {
                     align-items: center;
                     gap: 0.4rem;
                     padding: 0.5rem 1rem;
-                    background: rgba(15, 10, 6, 0.82);
-                    border: 1px solid rgba(212, 175, 55, 0.3);
+                    background: var(--ivory);
+                    border: 1px solid var(--border-light);
                     border-radius: 999px;
-                    color: rgba(255, 255, 255, 0.9);
+                    color: var(--charcoal);
                     font-size: 0.78rem;
                     font-weight: 600;
                     cursor: pointer;
-                    transition: all 0.25s ease;
-                    backdrop-filter: blur(10px);
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+                    transition: var(--transition);
+                    box-shadow: var(--shadow-sm);
                 }
 
                 .category-tab:hover {
-                    border-color: rgba(212, 175, 55, 0.7);
-                    color: #FFF;
+                    border-color: var(--border-mid);
+                    background: var(--sandstone);
                 }
 
                 .category-tab.active {
-                    background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
-                    color: #0A0806;
-                    border-color: #D4AF37;
-                    font-weight: 800;
-                    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.45);
+                    background: var(--charcoal);
+                    color: var(--ivory);
+                    border-color: var(--charcoal);
+                    font-weight: 700;
+                    box-shadow: var(--shadow-md);
                 }
 
                 .results-count-bar-container {
@@ -662,14 +661,13 @@ export default function ExploreClient() {
                     font-size: 0.72rem;
                     letter-spacing: 0.12em;
                     text-transform: uppercase;
-                    color: #F5E6AB;
+                    color: var(--charcoal);
                     font-weight: 800;
                     padding: 0.35rem 1.1rem;
-                    background: rgba(15, 10, 6, 0.85);
-                    border: 1px solid rgba(212, 175, 55, 0.4);
+                    background: var(--sandstone);
+                    border: 1px solid var(--border-light);
                     border-radius: 999px;
-                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-                    backdrop-filter: blur(10px);
+                    box-shadow: var(--shadow-sm);
                 }
 
                 /* ATTRACTIONS GRID - DESKTOP LARGE & PROMINENT */
@@ -681,24 +679,22 @@ export default function ExploreClient() {
                 }
 
                 .glass-card {
-                    background: rgba(24, 18, 12, 0.82) !important;
-                    border: 1px solid rgba(212, 175, 55, 0.3) !important;
-                    border-radius: 18px;
+                    background: var(--ivory) !important;
+                    border: 1px solid var(--border-light) !important;
+                    border-radius: var(--radius-md);
                     display: flex;
                     flex-direction: column;
-                    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-                    backdrop-filter: blur(14px);
-                    -webkit-backdrop-filter: blur(14px);
+                    transition: var(--transition);
                     position: relative;
                     overflow: hidden;
-                    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+                    box-shadow: var(--shadow-sm);
                 }
 
                 .glass-card:hover {
-                    background: rgba(28, 21, 14, 0.95) !important;
-                    border-color: rgba(212, 175, 55, 0.7) !important;
+                    background: var(--sandstone) !important;
+                    border-color: var(--border-mid) !important;
                     transform: translateY(-6px);
-                    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(212, 175, 55, 0.2);
+                    box-shadow: var(--shadow-md);
                 }
 
                 .card-image-wrapper {
@@ -721,19 +717,16 @@ export default function ExploreClient() {
                 }
 
                 .card-image-vignette {
-                    position: absolute;
-                    inset: 0;
-                    background: linear-gradient(to bottom, transparent 30%, rgba(24, 18, 12, 0.95) 100%);
+                    display: none;
                 }
 
                 .card-floating-badge {
                     position: absolute;
                     top: 0.75rem;
                     left: 0.75rem;
-                    background: rgba(10, 8, 6, 0.85);
-                    backdrop-filter: blur(10px);
-                    border: 1px solid rgba(212, 175, 55, 0.45);
-                    color: #F3E5AB;
+                    background: var(--charcoal);
+                    border: 1px solid var(--border-dark);
+                    color: var(--ivory);
                     padding: 0.3rem 0.7rem;
                     border-radius: 999px;
                     font-size: 0.64rem;
@@ -743,7 +736,7 @@ export default function ExploreClient() {
                     display: flex;
                     align-items: center;
                     gap: 0.35rem;
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+                    box-shadow: var(--shadow-sm);
                     z-index: 2;
                 }
 
@@ -757,8 +750,8 @@ export default function ExploreClient() {
                 .card-title {
                     font-family: var(--ff-display), serif;
                     font-size: 1.4rem;
-                    font-weight: 800;
-                    color: #FFF;
+                    font-weight: 700;
+                    color: var(--charcoal);
                     margin-bottom: 0.5rem;
                     line-height: 1.25;
                 }
@@ -766,7 +759,7 @@ export default function ExploreClient() {
                 .card-desc {
                     font-family: var(--ff-body), sans-serif;
                     font-size: 0.88rem;
-                    color: rgba(255, 255, 255, 0.82);
+                    color: var(--text-muted);
                     line-height: 1.5;
                     margin-bottom: 1rem;
                     display: -webkit-box;
@@ -779,7 +772,7 @@ export default function ExploreClient() {
                 }
 
                 .card-meta {
-                    border-top: 1px solid rgba(212, 175, 55, 0.2);
+                    border-top: 1px solid var(--border-light);
                     padding-top: 0.85rem;
                     margin-bottom: 1rem;
                     display: flex;
@@ -798,7 +791,7 @@ export default function ExploreClient() {
                     font-size: 0.6rem;
                     text-transform: uppercase;
                     letter-spacing: 0.08em;
-                    color: #D4AF37;
+                    color: var(--gold-light);
                     margin-bottom: 2px;
                     font-weight: 700;
                 }
@@ -806,10 +799,9 @@ export default function ExploreClient() {
                 .meta-val {
                     display: block;
                     font-size: 0.84rem;
-                    color: #FFF;
+                    color: var(--charcoal);
                     font-weight: 600;
                     line-height: 1.3;
-                    /* REMOVED NOWRAP AND OVERFLOW CUT-OFF SO FULL TIMINGS DISPLAY PERFECTLY */
                 }
 
                 .card-action-dock {
@@ -825,23 +817,23 @@ export default function ExploreClient() {
                     justify-content: center;
                     gap: 0.35rem;
                     padding: 0.55rem 0.85rem;
-                    background: rgba(10, 8, 6, 0.7);
-                    border: 1px solid rgba(212, 175, 55, 0.35);
-                    border-radius: 10px;
-                    color: #F3E5AB;
+                    background: var(--sandstone);
+                    border: 1px solid var(--border-light);
+                    border-radius: var(--radius-md);
+                    color: var(--charcoal);
                     font-size: 0.72rem;
                     font-weight: 700;
                     letter-spacing: 0.04em;
                     text-transform: uppercase;
                     cursor: pointer;
                     white-space: nowrap;
-                    transition: all 0.25s ease;
+                    transition: var(--transition);
                 }
 
                 .btn-action-direction:hover {
-                    background: rgba(212, 175, 55, 0.2);
-                    border-color: #D4AF37;
-                    color: #FFF;
+                    background: var(--charcoal);
+                    border-color: var(--charcoal);
+                    color: var(--ivory);
                 }
 
                 .btn-action-explore {
@@ -876,22 +868,22 @@ export default function ExploreClient() {
                     gap: 0.45rem;
                     margin-top: 0.6rem;
                     padding: 0.6rem 0.9rem;
-                    background: rgba(212, 175, 55, 0.12);
-                    border: 1px solid rgba(212, 175, 55, 0.35);
-                    border-radius: 10px;
-                    color: #F3E5AB;
+                    background: rgba(176, 138, 74, 0.1);
+                    border: 1px solid var(--border-light);
+                    border-radius: var(--radius-md);
+                    color: var(--gold);
                     font-size: 0.74rem;
                     font-weight: 700;
                     letter-spacing: 0.06em;
                     text-transform: uppercase;
                     text-decoration: none;
-                    transition: all 0.25s ease;
+                    transition: var(--transition);
                 }
 
                 .btn-booking-gold-ticket:hover {
-                    background: rgba(212, 175, 55, 0.25);
-                    border-color: #D4AF37;
-                    color: #FFF;
+                    background: rgba(176, 138, 74, 0.2);
+                    border-color: var(--border-mid);
+                    color: var(--charcoal);
                 }
 
                 /* STAYS SECTION */
@@ -924,12 +916,11 @@ export default function ExploreClient() {
                 .featured-card {
                     display: grid;
                     grid-template-columns: 1.15fr 1fr;
-                    background: rgba(24, 18, 12, 0.85);
-                    border: 1px solid rgba(212, 175, 55, 0.35);
-                    border-radius: 24px;
+                    background: var(--ivory);
+                    border: 1px solid var(--border-light);
+                    border-radius: var(--radius-lg);
                     overflow: hidden;
-                    backdrop-filter: blur(20px);
-                    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+                    box-shadow: var(--shadow-md);
                     width: 100%;
                 }
                 .featured-image-container {
@@ -947,8 +938,8 @@ export default function ExploreClient() {
                     position: absolute;
                     top: 1.2rem;
                     left: 1.2rem;
-                    background: rgba(10, 8, 6, 0.85);
-                    color: #D4AF37;
+                    background: var(--sandstone);
+                    color: var(--charcoal);
                     padding: 0.45rem 1rem;
                     border-radius: 999px;
                     font-size: 0.65rem;
@@ -956,8 +947,8 @@ export default function ExploreClient() {
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
-                    border: 1px solid rgba(212, 175, 55, 0.4);
-                    backdrop-filter: blur(8px);
+                    border: 1px solid var(--border-light);
+                    box-shadow: var(--shadow-sm);
                 }
                 .featured-info {
                     padding: 2rem;
@@ -967,7 +958,7 @@ export default function ExploreClient() {
                     gap: 1.1rem;
                 }
                 .tagline {
-                    color: rgba(212, 175, 55, 0.9);
+                    color: var(--gold);
                     text-transform: uppercase;
                     letter-spacing: 3px;
                     font-size: 0.68rem;
@@ -978,15 +969,15 @@ export default function ExploreClient() {
                 .featured-title {
                     font-family: var(--ff-display), serif;
                     font-size: 1.95rem;
-                    color: #FFFFFF;
+                    color: var(--charcoal);
                     line-height: 1.15;
                     font-weight: 800;
                 }
                 .featured-desc {
-                    color: rgba(255, 255, 255, 0.82);
+                    color: var(--text-muted);
                     line-height: 1.6;
                     font-size: 0.88rem;
-                    font-weight: 300;
+                    font-weight: 400;
                 }
                 .smart-badges {
                     display: flex;
@@ -1002,19 +993,15 @@ export default function ExploreClient() {
                     border-radius: 999px;
                     font-size: 0.75rem;
                     font-weight: 600;
-                    background: rgba(255, 255, 255, 0.05);
-                    border: 1px solid rgba(255, 255, 255, 0.12);
-                    color: rgba(255, 255, 255, 0.9);
+                    background: var(--sandstone);
+                    border: 1px solid var(--border-light);
+                    color: var(--charcoal);
                 }
                 .smart-pill.walk {
-                    background: rgba(212, 175, 55, 0.1);
-                    color: #F3E5AB;
-                    border-color: rgba(212, 175, 55, 0.3);
+                    color: var(--gold);
                 }
                 .smart-pill.drive {
-                    background: rgba(255, 255, 255, 0.08);
-                    color: #FFF;
-                    border-color: rgba(255, 255, 255, 0.2);
+                    color: var(--charcoal);
                 }
                 .featured-meta {
                     display: flex;
@@ -1025,7 +1012,7 @@ export default function ExploreClient() {
                     display: flex;
                     align-items: center;
                     gap: 0.65rem;
-                    color: rgba(255, 255, 255, 0.85);
+                    color: var(--text-muted);
                     font-size: 0.82rem;
                 }
                 .gov-seal {
@@ -1070,15 +1057,15 @@ export default function ExploreClient() {
                     color: #0A0806;
                 }
                 .btn-featured-booking.secondary {
-                    background: rgba(10, 8, 6, 0.7);
-                    color: #F3E5AB;
-                    border: 1px solid rgba(212, 175, 55, 0.35);
+                    background: var(--sandstone);
+                    color: var(--charcoal);
+                    border: 1px solid var(--border-light);
                     box-shadow: none;
                 }
                 .btn-featured-booking.secondary:hover {
-                    background: rgba(212, 175, 55, 0.2);
-                    border-color: #D4AF37;
-                    color: #FFF;
+                    background: var(--charcoal);
+                    border-color: var(--charcoal);
+                    color: var(--ivory);
                 }
                 .search-other-container {
                     display: flex;
@@ -1089,21 +1076,21 @@ export default function ExploreClient() {
                     display: inline-flex;
                     align-items: center;
                     gap: 0.6rem;
-                    background: rgba(20, 15, 9, 0.7);
-                    color: #D4AF37;
+                    background: var(--sandstone);
+                    color: var(--charcoal);
                     padding: 0.75rem 2rem;
                     border-radius: 999px;
                     font-size: 0.8rem;
                     font-weight: 700;
                     text-decoration: none;
-                    transition: all 0.25s ease;
-                    border: 1px solid rgba(212, 175, 55, 0.35);
-                    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+                    transition: var(--transition);
+                    border: 1px solid var(--border-light);
+                    box-shadow: var(--shadow-sm);
                 }
                 .search-other-link:hover {
-                    background: rgba(212, 175, 55, 0.2);
-                    color: #FFF;
-                    border-color: #D4AF37;
+                    background: var(--charcoal);
+                    color: var(--ivory);
+                    border-color: var(--charcoal);
                 }
 
                 /* RESPONSIVE MOBILE OPTIMIZATION - SLEEK & FIT */

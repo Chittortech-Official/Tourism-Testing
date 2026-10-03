@@ -15,16 +15,17 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
+    user-select: none;
 }
 
 .guide-toggle:hover {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 15px 35px rgba(184, 134, 11, 0.5);
+    box-shadow: 0 15px 35px rgba(184, 134, 11, 0.6);
 }
 
 .guide-image {
@@ -43,11 +44,15 @@
     background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
     top: 0;
     left: 0;
+    pointer-events: none;
 }
 
 .guide-icon {
-    font-size: 28px;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    font-size: 24px;
+    color: #ffffff;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+    line-height: 1;
+    font-weight: bold;
 }
 
 .chat-window {
@@ -55,20 +60,21 @@
     bottom: 80px;
     right: 0;
     width: 380px;
+    max-width: calc(100vw - 32px);
     max-height: 600px;
     height: 80vh;
-    background: rgba(15, 23, 42, 0.85);
-    /* Slate 900 with alpha */
+    background: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
     display: flex;
     flex-direction: column;
     overflow: hidden;
     transform-origin: bottom right;
     animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 10000;
 }
 
 @keyframes slideUp {
@@ -76,7 +82,6 @@
         opacity: 0;
         transform: scale(0.9) translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: scale(1) translateY(0);
@@ -84,37 +89,37 @@
 }
 
 .chat-header {
-    padding: 24px;
-    background: linear-gradient(to right, rgba(184, 134, 11, 0.1), transparent);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px 24px;
+    background: linear-gradient(to right, rgba(184, 134, 11, 0.2), transparent);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
 .bot-avatar {
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
     border-radius: 12px;
     background: linear-gradient(135deg, #FFD700, #B8860B);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 20px;
     box-shadow: 0 4px 10px rgba(184, 134, 11, 0.3);
 }
 
 .bot-info h3 {
     margin: 0;
     color: #FFD700;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
 
 .bot-status {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.7);
     display: flex;
     align-items: center;
     gap: 5px;
@@ -162,7 +167,6 @@
         opacity: 0;
         transform: translateY(5px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -170,10 +174,10 @@
 }
 
 .message.bot {
-    background: rgba(255, 255, 255, 0.05);
-    color: #f1f5f9;
+    background: rgba(255, 255, 255, 0.08);
+    color: #f8fafc;
     border-bottom-left-radius: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .message.user {
@@ -182,6 +186,33 @@
     color: white;
     border-bottom-right-radius: 4px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.message.typing {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 10px 16px;
+}
+
+.message.typing span {
+    font-size: 20px;
+    color: #FFD700;
+    animation: blink 1.4s infinite both;
+}
+
+.message.typing span:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.message.typing span:nth-child(3) {
+    animation-delay: .4s;
+}
+
+@keyframes blink {
+    0% { opacity: .2; }
+    20% { opacity: 1; }
+    100% { opacity: .2; }
 }
 
 .chat-link {
@@ -206,8 +237,8 @@
 }
 
 .action-btn {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     color: #FFD700;
     padding: 8px 14px;
     border-radius: 12px;
@@ -217,13 +248,13 @@
 }
 
 .action-btn:hover {
-    background: rgba(184, 134, 11, 0.15);
+    background: rgba(184, 134, 11, 0.25);
     border-color: #B8860B;
 }
 
 .chat-input-area {
-    padding: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 16px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     gap: 10px;
     align-items: center;
@@ -231,8 +262,8 @@
 
 .chat-input-area input {
     flex: 1;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 12px 16px;
     border-radius: 14px;
     color: white;
@@ -242,9 +273,13 @@
     transition: all 0.3s ease;
 }
 
+.chat-input-area input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
 .chat-input-area input:focus {
     border-color: #B8860B;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.12);
 }
 
 .send-btn {
@@ -259,6 +294,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
 .send-btn:hover {
@@ -270,28 +306,33 @@
     margin-left: auto;
     background: transparent;
     border: none;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
-    font-size: 20px;
+    font-size: 22px;
     transition: color 0.3s ease;
+    padding: 4px;
+    line-height: 1;
 }
 
 .close-btn:hover {
     color: white;
 }
 
-/* Mobile responsive */
+/* Mobile responsive fixes */
 @media (max-width: 480px) {
-    .chat-window {
-        width: calc(100vw - 40px);
-        right: -10px;
-        bottom: 70px;
-        height: auto;
-        max-height: calc(100vh - 120px);
-    }
-
     .heritage-guide-container {
         bottom: 20px;
-        right: 20px;
+        right: 16px;
+    }
+
+    .chat-window {
+        position: fixed;
+        right: 16px;
+        left: 16px;
+        bottom: 90px;
+        width: auto;
+        max-width: none;
+        height: 70vh;
+        max-height: 540px;
     }
 }

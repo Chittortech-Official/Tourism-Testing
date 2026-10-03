@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 
@@ -64,18 +64,7 @@ export default function HeroCarousel() {
               className={`hc-slide ${stateClass}`}
               onTransitionEnd={() => handleTransitionEnd(idx)}
             >
-              {/* Blurred Background Layer (solves empty space) */}
-              <div className="hc-blur-bg">
-                <img
-                  src={img.src}
-                  alt=""
-                  className="hc-bg-img"
-                  draggable={false}
-                />
-                <div className="hc-overlay"></div>
-              </div>
-
-              {/* Foreground Image Layer (Complete Original Image) */}
+              {/* Single Premium Image Layer */}
               <div className="hc-fg-wrapper">
                 <img
                   src={img.src}
@@ -84,6 +73,7 @@ export default function HeroCarousel() {
                   loading={idx === 0 ? "eager" : "lazy"}
                   draggable={false}
                 />
+                <div className="hc-overlay"></div>
               </div>
             </div>
           );
@@ -95,12 +85,12 @@ export default function HeroCarousel() {
           Outer section below the fixed navbar.
         */
         .hc-section {
-          position: relative;
-          z-index: 10;
+          position: absolute;
+          inset: 0;
+          z-index: 0;
           width: 100%;
-          padding-top: 57px;
-          background: #0a0806;
-          box-sizing: border-box;
+          height: 100%;
+          background: var(--charcoal);
           overflow: hidden;
         }
 
@@ -111,8 +101,7 @@ export default function HeroCarousel() {
         .hc-frame {
           position: relative;
           width: 100%;
-          height: clamp(350px, 60vh, 650px);
-          background: #0a0806;
+          height: 100%;
           overflow: hidden;
         }
 
@@ -146,69 +135,35 @@ export default function HeroCarousel() {
           z-index: 0;
         }
 
-        /* 
-          BACKGROUND LAYER
-          Uses the same image stretched and heavily blurred
-        */
-        .hc-blur-bg {
+        .hc-fg-wrapper {
           position: absolute;
           inset: 0;
           width: 100%;
           height: 100%;
-          overflow: hidden;
         }
 
-        .hc-bg-img {
+        .hc-fg-img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          filter: blur(4px);
-          transform: scale(1.1); /* Prevents unblurred edges */
+          object-position: center;
         }
 
         .hc-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(to bottom, rgba(10, 8, 6, 0.10) 0%, rgba(10, 8, 6, 0.25) 100%);
-        }
-
-        /* 
-          FOREGROUND LAYER
-          Holds the original image safely with NO cropping.
-        */
-        .hc-fg-wrapper {
-          position: absolute;
-          inset: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 16px;
-        }
-
-        .hc-fg-img {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: contain; /* Guarantees complete visibility */
-          border-radius: 6px;
-          box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+          background: linear-gradient(to bottom, rgba(28, 27, 25, 0.4) 0%, rgba(28, 27, 25, 0.7) 100%);
         }
 
         /* Responsive Breakpoints */
         @media (max-width: 768px) {
-          .hc-section { padding-top: 55px; }
-          .hc-frame { height: clamp(280px, 50vh, 450px); }
-          .hc-fg-wrapper { padding: 10px; }
-          .hc-fg-img { border-radius: 4px; box-shadow: 0 5px 25px rgba(0,0,0,0.5); }
+          
         }
         @media (max-width: 360px) {
-          .hc-section { padding-top: 52px; }
-          .hc-frame { height: clamp(250px, 45vh, 350px); }
-          .hc-fg-wrapper { padding: 8px; }
+          
         }
         @media (min-width: 1024px) {
-          .hc-section { padding-top: 60px; }
-          .hc-frame { height: clamp(450px, 45vw, 650px); }
-          .hc-fg-wrapper { padding: 20px; }
+          
         }
       `}</style>
     </section>

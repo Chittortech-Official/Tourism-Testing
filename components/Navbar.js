@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
@@ -136,18 +136,18 @@ export default function Navbar() {
                             onClick={() => { setIsLangOpen(!isLangOpen); triggerHaptic('light'); }}
                             aria-label="Switch Language"
                         >
-                            <span className="lang-icon">ðŸŒ</span>
+                            <span className="lang-icon">🌐</span>
                             <span className="lang-text">{lang.toUpperCase()}</span>
-                            <span className={`lang-chevron ${isLangOpen ? 'open' : ''}`}>â–¾</span>
+                            <span className={`lang-chevron ${isLangOpen ? 'open' : ''}`}>▾</span>
                         </button>
                         {isLangOpen && (
                             <div className="nav-lang-dropdown">
                                 <div className="dropdown-inner">
                                     <div onClick={() => { changeLanguage("en"); setIsLangOpen(false); }} className={lang === 'en' ? 'active' : ''}>
-                                        <span className="flag">ðŸ‡ºðŸ‡¸</span> English
+                                        <span className="flag">🇺🇸</span> English
                                     </div>
                                     <div onClick={() => { changeLanguage("hi"); setIsLangOpen(false); }} className={lang === 'hi' ? 'active' : ''}>
-                                        <span className="flag">ðŸ‡®ðŸ‡³</span> à¤¹à¤¿à¤‚à¤¦à¥€
+                                        <span className="flag">🇮🇳</span> हिंदी
                                     </div>
                                 </div>
                             </div>
@@ -177,7 +177,7 @@ export default function Navbar() {
                 {/* Header inside Drawer */}
                 <div className="drawer-header">
                     <div className="drawer-logo">
-                        <div className="drawer-logo-icon">ðŸ›ï¸</div>
+                        <div className="drawer-logo-icon">🏰</div>
                         <div className="drawer-logo-text">
                             <span className="part1">{t("nav.logoPart1") || "Chittorgarh"}</span>
                             <span className="part2"> {t("nav.logoPart2") || "Tourism"}</span>
@@ -195,7 +195,7 @@ export default function Navbar() {
                 {/* Scrollable Links Area */}
                 <div className="drawer-links-scroll">
                     <div className="drawer-links-list">
-                        {navLinks.map((link, idx) => (
+                        {navLinks.map((link) => (
                             link.isExternal ? (
                                 <a 
                                     key={link.href}
@@ -238,13 +238,13 @@ export default function Navbar() {
                             className={`lang-btn ${lang === 'en' ? 'active' : ''}`}
                             onClick={() => { changeLanguage("en"); triggerHaptic('light'); }}
                         >
-                            <span>ðŸ‡ºðŸ‡¸</span> English
+                            <span>🇺🇸</span> English
                         </button>
                         <button 
                             className={`lang-btn ${lang === 'hi' ? 'active' : ''}`}
                             onClick={() => { changeLanguage("hi"); triggerHaptic('light'); }}
                         >
-                            <span>ðŸ‡®ðŸ‡³</span> à¤¹à¤¿à¤‚à¤¦à¥€
+                            <span>🇮🇳</span> हिंदी
                         </button>
                     </div>
 
@@ -261,5 +261,3 @@ export default function Navbar() {
         </>
     );
 }
-
-

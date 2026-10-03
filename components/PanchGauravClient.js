@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Image from 'next/image';
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -91,7 +91,7 @@ export default function PanchGauravClient() {
                     position: fixed;
                     top: 0;
                     left: 0;
-                    width: 100vw;
+                    width: 100%;
                     height: 100vh;
                     background: url('/Image_3.jpg') no-repeat center center / cover;
                     z-index: 0;
@@ -102,7 +102,7 @@ export default function PanchGauravClient() {
                     position: fixed;
                     top: 0;
                     left: 0;
-                    width: 100vw;
+                    width: 100%;
                     height: 100vh;
                     background: linear-gradient(to bottom, 
                         rgba(15, 10, 6, 0.35) 0%, 
@@ -162,21 +162,17 @@ export default function PanchGauravClient() {
                     font-family: var(--ff-display), serif;
                     font-weight: 800;
                     margin-bottom: 0.6rem;
-                    background: linear-gradient(135deg, #FFFFFF 0%, #F5E6AB 50%, #D4AF37 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    color: var(--charcoal);
                     line-height: 1.15;
-                    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.9));
                 }
 
                 .subtitle-hero-royal {
                     max-width: 640px;
                     margin: 0 auto 1.5rem;
-                    color: #FFFFFF;
+                    color: var(--text-muted);
                     font-size: 0.98rem;
                     line-height: 1.6;
                     font-weight: 400;
-                    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
                 }
 
                 .program-meta {
@@ -191,13 +187,12 @@ export default function PanchGauravClient() {
                     align-items: center;
                     gap: 0.45rem;
                     padding: 0.4rem 1rem;
-                    background: rgba(15, 10, 6, 0.82);
-                    border: 1px solid rgba(212, 175, 55, 0.35);
+                    background: var(--sandstone);
+                    border: 1px solid var(--border-light);
                     border-radius: 999px;
-                    color: #F5E6AB;
+                    color: var(--charcoal);
                     font-size: 0.78rem;
                     font-weight: 700;
-                    backdrop-filter: blur(8px);
                 }
 
                 /* PILLARS GRID */
@@ -209,22 +204,20 @@ export default function PanchGauravClient() {
                 }
 
                 .pillar-glass-card {
-                    background: rgba(20, 15, 10, 0.88);
-                    border: 1px solid rgba(212, 175, 55, 0.38);
+                    background: var(--ivory);
+                    border: 1px solid var(--border-light);
                     border-radius: 22px;
                     overflow: hidden;
-                    backdrop-filter: blur(20px);
-                    -webkit-backdrop-filter: blur(20px);
-                    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.65);
+                    box-shadow: var(--shadow-sm);
                     display: flex;
                     flex-direction: column;
-                    transition: all 0.35s ease;
+                    transition: var(--transition);
                 }
 
                 .pillar-glass-card:hover {
                     transform: translateY(-6px);
-                    border-color: rgba(212, 175, 55, 0.7);
-                    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+                    border-color: var(--border-mid);
+                    box-shadow: var(--shadow-md);
                 }
 
                 .pillar-image-wrapper {
@@ -259,14 +252,13 @@ export default function PanchGauravClient() {
                     align-items: center;
                     gap: 0.4rem;
                     padding: 0.35rem 0.85rem;
-                    background: rgba(15, 10, 6, 0.88);
-                    border: 1px solid rgba(212, 175, 55, 0.45);
+                    background: var(--ivory);
+                    border: 1px solid var(--border-light);
                     border-radius: 999px;
-                    color: #D4AF37;
+                    color: var(--charcoal);
                     font-size: 0.68rem;
                     font-weight: 800;
                     letter-spacing: 0.1em;
-                    backdrop-filter: blur(10px);
                 }
 
                 .pillar-body {
@@ -289,14 +281,14 @@ export default function PanchGauravClient() {
                     font-family: var(--ff-display), serif;
                     font-size: 1.35rem;
                     font-weight: 800;
-                    color: #FFFFFF;
+                    color: var(--charcoal);
                     line-height: 1.3;
                     margin-bottom: 0.75rem;
                 }
 
                 .pillar-desc {
                     font-size: 0.88rem;
-                    color: rgba(255, 255, 255, 0.85);
+                    color: var(--text-muted);
                     line-height: 1.55;
                     font-weight: 300;
                     flex: 1;
@@ -316,12 +308,11 @@ export default function PanchGauravClient() {
 
                 /* OBJECTIVES SECTION */
                 .objectives-section {
-                    background: rgba(20, 15, 10, 0.88);
-                    border: 1px solid rgba(212, 175, 55, 0.38);
+                    background: var(--ivory);
+                    border: 1px solid var(--border-light);
                     border-radius: 24px;
                     padding: 3rem 2.2rem;
-                    backdrop-filter: blur(20px);
-                    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
+                    box-shadow: var(--shadow-sm);
                     margin-bottom: 3.5rem;
                 }
 
@@ -330,7 +321,7 @@ export default function PanchGauravClient() {
                     font-family: var(--ff-display), serif;
                     font-size: clamp(1.8rem, 4vw, 2.4rem);
                     font-weight: 800;
-                    color: #FFF;
+                    color: var(--charcoal);
                     margin-bottom: 2.2rem;
                 }
 
@@ -341,8 +332,8 @@ export default function PanchGauravClient() {
                 }
 
                 .obj-glass-card {
-                    background: rgba(26, 20, 14, 0.75);
-                    border: 1px solid rgba(212, 175, 55, 0.25);
+                    background: var(--sandstone);
+                    border: 1px solid var(--border-light);
                     border-radius: 16px;
                     padding: 1.75rem 1.4rem;
                     text-align: center;
@@ -368,13 +359,13 @@ export default function PanchGauravClient() {
                     font-family: var(--ff-display), serif;
                     font-size: 1.2rem;
                     font-weight: 800;
-                    color: #FFF;
+                    color: var(--charcoal);
                     margin-bottom: 0.5rem;
                 }
 
                 .obj-card-desc {
                     font-size: 0.85rem;
-                    color: rgba(255, 255, 255, 0.8);
+                    color: var(--text-muted);
                     line-height: 1.5;
                 }
 

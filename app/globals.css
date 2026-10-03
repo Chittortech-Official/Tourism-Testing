@@ -1,74 +1,73 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 
-/* 
-   CHITTORGARH TOURISM  Royal Heritage Edition v3.0
-   Premium Mobile-First Architecture
-    */
+/*
+   CHITTORGARH TOURISM â€” Premium Heritage Edition v4.0
+   Warm Ivory + Sandstone + Charcoal + Antique Gold
+*/
 
-/*  Design System  */
+/* â•â•â•â•â•â• DESIGN SYSTEM â•â•â•â•â•â• */
 :root {
-  /* Royal Palette: Refined Gold & Shadow */
-  --gold: #D4AF37;
-  --gold-dim: #B8860B;
-  --gold-light: #F3E5AB;
-  --dark: #0F0A06;
-  --dark-soft: #1C150F;
-  --cream: #FAF7F2;
-  --parchment: #F0EBE0;
+  /* NEW: Warm Heritage Palette */
+  --ivory:        #F7F3EC;
+  --sandstone:    #EEE7DA;
+  --sand-dark:    #E2D8C8;
+  --charcoal:     #1C1B19;
+  --charcoal-mid: #2E2D2A;
+  --charcoal-soft:#3D3C38;
 
-  --text-main: #2D241E;
-  --text-muted: #665D55;
-  --accent: #A04030;
-  /* Terracotta */
+  /* Accents */
+  --gold:         #B08A4A;
+  --gold-light:   #D4AF6A;
+  --gold-dim:     #8A6A32;
+  --terracotta:   #A65D43;
 
-  /* Heritage Tints */
-  --mewar-maroon: #800000;
-  --saffron: #FF9933;
+  /* Text */
+  --text-main:    #2A241C;
+  --text-muted:   #6B6157;
+  --text-light:   #9E9287;
+  --text-white:   #F5EFE6;
 
-  /* Typography: Fluid Scaling */
-  --ff-display: var(--font-playfair),
-    "Playfair Display",
-    serif;
-  --ff-body: var(--font-inter),
-    "Inter",
-    sans-serif;
+  /* Legacy compat */
+  --dark:         #1C1B19;
+  --dark-soft:    #2E2D2A;
+  --cream:        #F7F3EC;
+  --parchment:    #EEE7DA;
+  --accent:       #A65D43;
+  --mewar-maroon: #8B1A1A;
+  --saffron:      #D4822A;
+
+  /* Typography */
+  --ff-display: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --ff-body:    var(--font-inter), "Inter", system-ui, sans-serif;
 
   /* Fluid Font Sizes */
-  --fs-hero-title: clamp(3rem, 12vw, 8rem);
-  --fs-hero-sub: clamp(1rem, 2.5vw, 1.25rem);
-  --fs-section-title: clamp(2.2rem, 5vw, 4rem);
-  --fs-body: 1rem;
+  --fs-hero-title:    clamp(2.8rem, 8vw, 5.5rem);
+  --fs-hero-sub:      clamp(1rem, 2vw, 1.2rem);
+  --fs-section-title: clamp(1.9rem, 4vw, 3.2rem);
+  --fs-body:          1rem;
 
   /* UI Tokens */
-  --radius: 0px;
-  --transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  --shadow-card: 0 20px 40px -10px rgba(15, 10, 6, 0.12);
-  --glass: rgba(15, 10, 6, 0.45);
-  --glass-border: rgba(212, 175, 55, 0.2);
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+  --radius:     14px;
+  --transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 0.2s ease;
+  --shadow-sm:  0 2px 8px rgba(28, 27, 25, 0.08);
+  --shadow-md:  0 8px 24px rgba(28, 27, 25, 0.12);
+  --shadow-card:0 12px 32px rgba(28, 27, 25, 0.10);
+  --shadow-lg:  0 24px 48px rgba(28, 27, 25, 0.16);
 
-  /* World Class UI Helpers */
-  --mesh-gold: radial-gradient(circle at 0% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
-               radial-gradient(circle at 100% 100%, rgba(184, 134, 11, 0.1) 0%, transparent 50%);
-  --liquid-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  /* Borders */
+  --border-light: rgba(176, 138, 74, 0.18);
+  --border-mid:   rgba(176, 138, 74, 0.35);
 
   /* Layout */
   --container-px: 1.5rem;
-  --section-pad: clamp(4rem, 10vh, 10rem);
+  --section-pad:  clamp(3.5rem, 8vh, 7rem);
 }
 
-.premium-glass {
-  background: var(--glass);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
-
-.mesh-bg {
-  background: var(--mesh-gold);
-}
-
-/*  Reset & Base  */
+/* â•â•â•â•â•â• RESET & BASE â•â•â•â•â•â• */
 *,
 *::before,
 *::after {
@@ -77,53 +76,51 @@
   box-sizing: border-box;
 }
 
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-tap-highlight-color: transparent;
-  overflow-x: hidden;
 }
 
 body {
   font-family: var(--ff-body);
-  background: transparent;
+  background: var(--ivory);
   color: var(--text-main);
-  line-height: 1.6;
+  line-height: 1.65;
   overflow-x: hidden;
-  max-width: 100%;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
 
 ::selection {
   background: var(--gold);
-  color: #fff;
+  color: var(--text-white);
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   GLOBAL FIXED BACKGROUND â€” applies to ALL pages
+/* Utility: premium glass â€” kept for dark sections */
+.premium-glass {
+  background: rgba(28, 27, 25, 0.55);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
+   GLOBAL FIXED BACKGROUND Ã¢â‚¬â€ applies to ALL pages
    (styled-jsx global doesn't work in App Router)
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 .fixed-bg {
-  position: fixed;
-  inset: 0;
-  background: url('/Image_3.jpg') no-repeat center center / cover;
-  z-index: 0;
-  filter: brightness(1.08) contrast(1.05);
-  pointer-events: none;
+  display: none; /* Hidden â€” body background is now warm ivory */
 }
 
 .bg-overlay {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(20, 15, 10, 0.05) 0%,
-    rgba(15, 10, 6, 0.15) 45%,
-    rgba(10, 8, 5, 0.30) 100%
-  );
-  z-index: 1;
-  pointer-events: none;
+  display: none; /* Hidden â€” no longer needed */
 }
 
 /* Every page's main content must be above the fixed bg */
@@ -136,7 +133,7 @@ body {
   z-index: 10;
 }
 
-/* Page wrapper base â€” must be transparent */
+/* Page wrapper base Ã¢â‚¬â€ must be transparent */
 .explore-page,
 .visitor-page,
 .panch-gaurav-page,
@@ -147,13 +144,13 @@ body {
   position: relative;
   min-height: 100vh;
   background: transparent;
-  color: #fff;
+  color: var(--text-white);
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   EMERGENCY PAGE â€” Full CSS (styled-jsx doesn't work in App Router)
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-.ep { position: relative; min-height: auto; background: transparent; color: #fff; font-family: var(--ff-body); padding-bottom: 20px; }
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
+   EMERGENCY PAGE Ã¢â‚¬â€ Full CSS (styled-jsx doesn't work in App Router)
+   Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
+.ep { position: relative; min-height: auto; background: transparent; color: var(--text-white); font-family: var(--ff-body); padding-bottom: 20px; }
 
 /* Hero */
 .ep-hero { padding: 120px 16px 32px; text-align: center; max-width: 800px; margin: 0 auto; position: relative; z-index: 10; }
@@ -206,9 +203,9 @@ body {
 .ep-nearby-dist { font-size: 0.68rem; color: #4ADE80; font-weight: 800; letter-spacing: 0.6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ep-nearby-arrow { color: #F5E6AB; font-size: 1.1rem; font-weight: bold; flex-shrink: 0; }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   EMERGENCY PAGE â€” MOBILE RESPONSIVE OPTIMIZATION
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
+   EMERGENCY PAGE Ã¢â‚¬â€ MOBILE RESPONSIVE OPTIMIZATION
+   Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 @media (max-width: 680px) {
   .ep-hero { padding: 85px 10px 14px; }
   .ep-hero-box { padding: 16px 10px; border-radius: 14px; }
@@ -238,9 +235,9 @@ body {
   .ep-nearby-arrow { font-size: 0.9rem; }
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   HERO & AUDIO GUIDE BAR â€” GLOBAL MOBILE RESPONSIVE FIXES
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
+   HERO & AUDIO GUIDE BAR Ã¢â‚¬â€ GLOBAL MOBILE RESPONSIVE FIXES
+   Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 .audio-bar {
   display: inline-flex !important;
   align-items: center !important;
@@ -482,7 +479,7 @@ h1 {
   justify-content: center;
   padding: 1.15rem 2.5rem;
   background: linear-gradient(135deg, var(--gold), var(--gold-dim));
-  color: #fff;
+  color: var(--text-white);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 2px;
@@ -517,7 +514,7 @@ h1 {
   justify-content: center;
   padding: 1.15rem 2.5rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
+  color: var(--text-white);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 2px;
@@ -527,7 +524,7 @@ h1 {
 
 .btn-outline:hover {
   background: rgba(255, 255, 255, 0.1);
-  border-color: #fff;
+  border-color: var(--text-white);
   transform: translateY(-3px);
 }
 
@@ -543,14 +540,14 @@ h1 {
   justify-content: space-between;
   align-items: center;
   transition: var(--transition);
-  background: rgba(15, 10, 6, 0.95);
+  background: rgba(28, 27, 25, 0.95);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar.scrolled {
-  background: rgba(10, 8, 6, 0.98);
+  background: rgba(28, 27, 25, 0.98);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 0.8rem var(--container-px);
@@ -559,7 +556,7 @@ h1 {
 
 .logo-name {
   font-size: 1.5rem;
-  color: #fff;
+  color: var(--text-white);
   font-family: var(--ff-display);
 }
 
@@ -716,7 +713,7 @@ h1 {
   position: relative;
   background: url('/hero_bg.jpg') center / cover no-repeat;
   text-align: center;
-  color: #fff;
+  color: var(--text-white);
 }
 
 @media (max-width: 768px) {
@@ -863,7 +860,7 @@ h1 {
 
   .nav-links a:hover,
   .nav-links a.active {
-    color: #fff;
+    color: var(--text-white);
   }
 
   .nav-links a::after {
@@ -895,7 +892,7 @@ h1 {
 /*  Stats Band  */
 .stats-band {
   background: var(--dark);
-  color: #fff;
+  color: var(--text-white);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -979,7 +976,7 @@ h1 {
 
 .quote-band {
   background: var(--dark-soft);
-  color: #fff;
+  color: var(--text-white);
   text-align: center;
   padding: 6rem 0;
 }
@@ -1037,7 +1034,7 @@ h1 {
 /*  CTA  */
 .cta-section {
   background: var(--dark);
-  color: #fff;
+  color: var(--text-white);
   text-align: center;
   padding: 6rem 0;
 }
@@ -1085,9 +1082,9 @@ h1 {
   transform: translateX(10px);
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
    WORLD-CLASS ROYAL MOBILE DRAWER NAVIGATION
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 .mobile-nav-backdrop {
   position: fixed;
   inset: 0;
@@ -1323,13 +1320,13 @@ h1 {
 .drawer-emergency-pill:hover {
   background: rgba(239, 68, 68, 0.18);
   border-color: rgba(239, 68, 68, 0.5);
-  color: #FFF;
+  color: var(--text-white);
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
    GLOBAL DEVANAGARI (HINDI) TYPOGRAPHY ENGINE
    Prevents matra clipping, broken conjuncts & font slant
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 html[lang="hi"],
 [data-lang="hi"],
 body[data-lang="hi"] {
@@ -1409,16 +1406,15 @@ html[lang="hi"] a,
   transition-delay: 0.3s;
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   FOOTER â€” Best-in-Class Premium Design
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
+   FOOTER Ã¢â‚¬â€ Best-in-Class Premium Design
+   Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 
 .site-footer {
   position: relative;
   z-index: 50;
-  background: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.06) 0%, transparent 60%),
-    linear-gradient(180deg, #0a0804 0%, #000000 100%);
-  color: rgba(255, 255, 255, 0.5);
+  background: var(--charcoal);
+  color: rgba(255, 255, 255, 0.7);
   padding: 0 0 0;
   font-family: var(--ff-body);
   overflow: hidden;
@@ -1456,7 +1452,7 @@ html[lang="hi"] a,
   padding-bottom: 0;
 }
 
-/* â”€â”€ Grid layout â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Grid layout Ã¢â€â‚¬Ã¢â€â‚¬ */
 .footer-cols-wrapper {
   display: contents;
 }
@@ -1470,8 +1466,8 @@ html[lang="hi"] a,
 
 @media (max-width: 767px) {
   .site-footer {
-    background: linear-gradient(180deg, #100B07 0%, #050403 100%) !important;
-    border-top: 1px solid rgba(212, 175, 55, 0.25) !important;
+    background: var(--charcoal) !important;
+    border-top: 1px solid var(--border-mid) !important;
     padding-bottom: 4rem !important;
   }
 
@@ -1488,8 +1484,8 @@ html[lang="hi"] a,
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
-    background: linear-gradient(135deg, rgba(30, 22, 14, 0.6) 0%, rgba(15, 10, 6, 0.8) 100%) !important;
-    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    background: var(--charcoal-mid) !important;
+    border: 1px solid var(--border-light) !important;
     border-radius: 16px !important;
     padding: 1.25rem 1rem !important;
     margin-bottom: 0.75rem !important;
@@ -1616,12 +1612,12 @@ html[lang="hi"] a,
   }
 }
 
-/* â”€â”€ Brand column â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Brand column Ã¢â€â‚¬Ã¢â€â‚¬ */
 .footer-logo {
   font-family: var(--ff-display);
   font-size: clamp(1.75rem, 3vw, 2.2rem);
   font-weight: 600;
-  color: #fff;
+  color: var(--text-white);
   letter-spacing: 1px;
   margin-bottom: 1.1rem;
   line-height: 1.1;
@@ -1639,7 +1635,7 @@ html[lang="hi"] a,
   margin-bottom: 2rem;
 }
 
-/* â”€â”€ Social icons â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Social icons Ã¢â€â‚¬Ã¢â€â‚¬ */
 .footer-socials {
   display: flex;
   gap: 0.75rem;
@@ -1668,7 +1664,7 @@ html[lang="hi"] a,
   box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
 }
 
-/* â”€â”€ Column headings â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Column headings Ã¢â€â‚¬Ã¢â€â‚¬ */
 .footer-col-title {
   font-size: 0.68rem;
   letter-spacing: 3px;
@@ -1691,7 +1687,7 @@ html[lang="hi"] a,
   opacity: 0.5;
 }
 
-/* â”€â”€ Nav list â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Nav list Ã¢â€â‚¬Ã¢â€â‚¬ */
 .footer-nav-list {
   list-style: none;
   padding: 0;
@@ -1730,7 +1726,7 @@ html[lang="hi"] a,
   opacity: 1;
 }
 
-/* â”€â”€ Info items â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Info items Ã¢â€â‚¬Ã¢â€â‚¬ */
 .footer-info-item {
   display: flex;
   align-items: flex-start;
@@ -1759,7 +1755,7 @@ html[lang="hi"] a,
   color: var(--gold);
 }
 
-/* â”€â”€ Ornamental divider â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Ornamental divider Ã¢â€â‚¬Ã¢â€â‚¬ */
 .footer-ornament {
   display: flex;
   align-items: center;
@@ -1935,11 +1931,11 @@ html[lang="hi"] a,
   font-size: 0.6rem;
 }
 
-/* â”€â”€ Heritage Theme Utilities â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Heritage Theme Utilities Ã¢â€â‚¬Ã¢â€â‚¬ */
 .heritage-container {
   min-height: 100vh;
   position: relative;
-  color: #fff;
+  color: var(--text-white);
   background: #0f0a06;
   /* Dark fallback */
 }
@@ -2013,7 +2009,7 @@ html[lang="hi"] a,
 }
 
 .highlights-section .section-title {
-  color: #fff;
+  color: var(--text-white);
 }
 
 .highlights-section .section-desc {
@@ -2138,7 +2134,7 @@ html[lang="hi"] a,
 .vg-modal-title {
   font-family: var(--ff-display);
   font-size: clamp(2.2rem, 5vw, 3.5rem);
-  color: #fff;
+  color: var(--text-white);
   font-weight: 500;
   margin-bottom: 1rem;
   line-height: 1.1;
@@ -2218,7 +2214,7 @@ html[lang="hi"] a,
   font-family: var(--ff-display);
   font-size: 1.15rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--text-white);
 }
 
 .vg-choice-sub {
@@ -2244,7 +2240,7 @@ html[lang="hi"] a,
 .htr-page {
   min-height: 100vh;
   position: relative;
-  color: #fff;
+  color: var(--text-white);
 }
 
 .htr-fixed-bg {
@@ -2347,7 +2343,7 @@ html[lang="hi"] a,
 .htr-section-title {
   font-family: var(--ff-display);
   font-size: clamp(2rem, 4vw, 3.2rem);
-  color: #fff;
+  color: var(--text-white);
   font-weight: 500;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
@@ -2429,7 +2425,7 @@ html[lang="hi"] a,
 .htr-card-heading {
   font-family: var(--ff-display);
   font-size: 1.4rem;
-  color: #fff;
+  color: var(--text-white);
   margin-bottom: 0.75rem;
   font-weight: 500;
 }
@@ -2536,7 +2532,7 @@ html[lang="hi"] a,
 
 .htr-row-highlight td {
   background: rgba(212, 175, 55, 0.07) !important;
-  color: #fff;
+  color: var(--text-white);
   font-weight: 500;
 }
 
@@ -2568,7 +2564,7 @@ html[lang="hi"] a,
   gap: 0.6rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(212, 175, 55, 0.2);
-  color: #fff;
+  color: var(--text-white);
   padding: 0.5rem 1rem;
   font-size: 0.75rem;
   font-weight: 600;
@@ -2610,7 +2606,7 @@ html[lang="hi"] a,
   position: absolute;
   top: calc(100% + 1rem);
   right: 0;
-  background: rgba(15, 10, 6, 0.95);
+  background: rgba(28, 27, 25, 0.95);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(212, 175, 55, 0.3);
   min-width: 160px;
@@ -2650,7 +2646,7 @@ html[lang="hi"] a,
 
 .nav-lang-dropdown div:hover {
   background: rgba(212, 175, 55, 0.1);
-  color: #fff;
+  color: var(--text-white);
   padding-left: 1.5rem;
 }
 
@@ -2787,7 +2783,7 @@ html[lang="hi"] a,
   }
 }
 
-/* â”€â”€ HTR LOCATION PROMPT â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ HTR LOCATION PROMPT Ã¢â€â‚¬Ã¢â€â‚¬ */
 .htr-location-overlay {
   position: fixed;
   inset: 0;
@@ -2812,14 +2808,14 @@ html[lang="hi"] a,
 }
 
 .htr-location-card {
-  background: rgba(28, 20, 15, 0.9);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: #FAF6F0;
+  border: 2px solid rgba(184, 134, 11, 0.35);
   border-radius: 24px;
   padding: 3rem 2rem;
-  max-width: 500px;
-  width: 100%;
+  max-width: 480px;
+  width: 90%;
   text-align: center;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
   animation: htr-slide-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
@@ -2837,23 +2833,24 @@ html[lang="hi"] a,
 
 .htr-location-icon {
   font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+  margin-bottom: 1.2rem;
+  line-height: 1;
 }
 
 .htr-location-title {
-  font-family: var(--ff-display);
+  font-family: var(--ff-serif);
   font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #fff;
+  margin-bottom: 0.8rem;
+  color: #1C1B19 !important;
+  font-weight: 800;
 }
 
 .htr-location-sub {
-  color: rgba(255, 255, 255, 0.6);
+  color: #4A453E !important;
   font-size: 0.95rem;
   line-height: 1.6;
-  margin-bottom: 2rem;
-  font-weight: 300;
+  margin-bottom: 1.8rem;
+  font-weight: 400;
 }
 
 .htr-location-actions {
@@ -2864,12 +2861,12 @@ html[lang="hi"] a,
 }
 
 .htr-loc-btn-primary {
-  background: linear-gradient(135deg, var(--gold), var(--gold-dim));
-  color: #000;
+  background: linear-gradient(135deg, #FFD700, #B8860B);
+  color: #000000 !important;
   border: none;
   padding: 1rem;
   border-radius: 12px;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -2877,12 +2874,13 @@ html[lang="hi"] a,
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
+  box-shadow: 0 6px 20px rgba(184, 134, 11, 0.3);
 }
 
 .htr-loc-btn-primary:hover {
   transform: scale(1.02);
-  filter: brightness(1.1);
-  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+  filter: brightness(1.08);
+  box-shadow: 0 8px 25px rgba(184, 134, 11, 0.4);
 }
 
 .htr-loc-btn-primary:disabled {
@@ -2891,33 +2889,39 @@ html[lang="hi"] a,
 }
 
 .htr-loc-btn-secondary {
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0.9rem;
+  background: #1C1B19;
+  color: #FFFFFF !important;
+  border: 1px solid #1C1B19;
+  padding: 0.95rem;
   border-radius: 12px;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .htr-loc-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: #332F2A;
+  border-color: #332F2A;
 }
 
 .htr-loc-skip {
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 0.75rem;
+  color: #8B6508 !important;
+  font-size: 0.85rem;
+  font-weight: 700;
   text-decoration: underline;
+  text-underline-offset: 3px;
   cursor: pointer;
   transition: color 0.3s ease;
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 
 .htr-loc-skip:hover {
-  color: rgba(255, 255, 255, 0.6);
+  color: #B8860B !important;
 }
 
 .htr-loc-spinner {
@@ -2973,7 +2977,7 @@ html[lang="hi"] a,
   border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 8px;
   padding: 0.8rem 1rem;
-  color: #fff;
+  color: var(--text-white);
   font-size: 0.9rem;
   outline: none;
   transition: border-color 0.3s ease;
@@ -3005,7 +3009,7 @@ html[lang="hi"] a,
 .htr-popular-chip:hover {
   background: rgba(212, 175, 55, 0.15);
   border-color: var(--gold);
-  color: #fff;
+  color: var(--text-white);
 }
 
 .htr-detected-pill-wrap {
@@ -3030,9 +3034,9 @@ html[lang="hi"] a,
   color: var(--gold);
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
    ROYAL LIVE VISITOR COUNTER BADGE
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
 .royal-visitor-wrapper {
   margin-top: 1.5rem;
   display: flex;
@@ -3123,3 +3127,4 @@ html[lang="hi"] a,
   to { opacity: 1; }
 }
 
+

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Image from 'next/image';
 import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
@@ -239,7 +239,7 @@ export default function VisitorInfoClient() {
                     position: fixed;
                     top: 0;
                     left: 0;
-                    width: 100vw;
+                    width: 100%;
                     height: 100vh;
                     background: url('/Image_3.jpg') no-repeat center center / cover;
                     z-index: 0;
@@ -250,7 +250,7 @@ export default function VisitorInfoClient() {
                     position: fixed;
                     top: 0;
                     left: 0;
-                    width: 100vw;
+                    width: 100%;
                     height: 100vh;
                     background: linear-gradient(to bottom, 
                         rgba(15, 10, 6, 0.35) 0%, 
@@ -310,21 +310,17 @@ export default function VisitorInfoClient() {
                     font-family: var(--ff-display), serif;
                     font-weight: 800;
                     margin-bottom: 0.6rem;
-                    background: linear-gradient(135deg, #FFFFFF 0%, #F5E6AB 50%, #D4AF37 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    color: var(--charcoal);
                     line-height: 1.15;
-                    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.9));
                 }
 
                 .subtitle-hero-royal {
                     max-width: 640px;
                     margin: 0 auto 1.5rem;
-                    color: #FFFFFF;
+                    color: var(--text-muted);
                     font-size: 0.98rem;
                     line-height: 1.6;
                     font-weight: 400;
-                    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
                 }
 
                 /* LOCATION PILL */
@@ -332,17 +328,16 @@ export default function VisitorInfoClient() {
                     display: inline-flex;
                     align-items: center;
                     gap: 0.75rem;
-                    background: rgba(15, 10, 6, 0.85);
-                    border: 1px solid rgba(212, 175, 55, 0.45);
+                    background: var(--sandstone);
+                    border: 1px solid var(--border-light);
                     padding: 0.65rem 1.4rem;
                     border-radius: 999px;
-                    color: #F5E6AB;
+                    color: var(--charcoal);
                     font-weight: 700;
                     font-size: 0.88rem;
                     cursor: pointer;
-                    transition: all 0.3s ease;
-                    backdrop-filter: blur(10px);
-                    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+                    transition: var(--transition);
+                    box-shadow: var(--shadow-sm);
                 }
 
                 .v-loc-pill:hover {
@@ -365,14 +360,14 @@ export default function VisitorInfoClient() {
                 }
 
                 .v-loc-card {
-                    background: rgba(20, 15, 10, 0.95);
-                    border: 1px solid rgba(212, 175, 55, 0.4);
-                    border-radius: 28px;
+                    background: var(--ivory);
+                    border: 1px solid var(--border-light);
+                    border-radius: var(--radius-lg);
                     padding: 3rem 2rem;
                     max-width: 480px;
                     width: 100%;
                     text-align: center;
-                    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+                    box-shadow: var(--shadow-md);
                 }
 
                 .v-loc-icon {
@@ -383,13 +378,13 @@ export default function VisitorInfoClient() {
                 .v-loc-title {
                     font-family: var(--ff-display), serif;
                     font-size: 1.8rem;
-                    color: #FFF;
+                    color: var(--charcoal);
                     margin-bottom: 0.8rem;
                     font-weight: 800;
                 }
 
                 .v-loc-desc {
-                    color: rgba(255, 255, 255, 0.8);
+                    color: var(--text-muted);
                     margin-bottom: 2rem;
                     line-height: 1.6;
                     font-size: 0.92rem;
@@ -428,9 +423,9 @@ export default function VisitorInfoClient() {
                 }
 
                 .v-btn-outline {
-                    background: rgba(255, 255, 255, 0.05);
-                    color: #F3E5AB;
-                    border: 1px solid rgba(212, 175, 55, 0.4);
+                    background: var(--sandstone);
+                    color: var(--charcoal);
+                    border: 1px solid var(--border-light);
                     padding: 0.85rem 1.6rem;
                     border-radius: 12px;
                     font-weight: 700;
@@ -438,15 +433,15 @@ export default function VisitorInfoClient() {
                     align-items: center;
                     justify-content: center;
                     gap: 0.5rem;
-                    transition: all 0.3s ease;
+                    transition: var(--transition);
                     cursor: pointer;
                     font-size: 0.88rem;
                 }
 
                 .v-btn-outline:hover {
-                    background: rgba(212, 175, 55, 0.2);
-                    border-color: #D4AF37;
-                    color: #FFF;
+                    background: var(--charcoal);
+                    border-color: var(--charcoal);
+                    color: var(--ivory);
                 }
 
                 .v-loc-skip {
@@ -460,11 +455,11 @@ export default function VisitorInfoClient() {
 
                 .v-loc-input {
                     width: 100%;
-                    background: rgba(255, 255, 255, 0.08);
-                    border: 1px solid rgba(212, 175, 55, 0.35);
+                    background: var(--sandstone);
+                    border: 1px solid var(--border-light);
                     border-radius: 10px;
                     padding: 0.75rem 1rem;
-                    color: #FFF;
+                    color: var(--charcoal);
                     font-size: 0.9rem;
                     margin-bottom: 1rem;
                 }
@@ -478,20 +473,19 @@ export default function VisitorInfoClient() {
                 }
 
                 .v-chip {
-                    background: rgba(255, 255, 255, 0.08);
-                    border: 1px solid rgba(212, 175, 55, 0.25);
-                    color: #F3E5AB;
+                    background: var(--ivory);
+                    border: 1px solid var(--border-light);
+                    color: var(--charcoal);
                     padding: 0.4rem 0.9rem;
                     border-radius: 999px;
                     font-size: 0.78rem;
                     cursor: pointer;
-                    transition: all 0.25s ease;
+                    transition: var(--transition);
                 }
 
                 .v-chip:hover {
-                    background: rgba(212, 175, 55, 0.2);
-                    border-color: #D4AF37;
-                    color: #FFF;
+                    background: var(--sandstone);
+                    border-color: var(--border-mid);
                 }
 
                 /* DYNAMIC MAP SECTION */
@@ -501,12 +495,11 @@ export default function VisitorInfoClient() {
                 }
 
                 .v-map-card {
-                    background: rgba(20, 15, 10, 0.88);
-                    border: 1px solid rgba(212, 175, 55, 0.38);
-                    border-radius: 24px;
+                    background: var(--ivory);
+                    border: 1px solid var(--border-light);
+                    border-radius: var(--radius-lg);
                     padding: 2rem;
-                    backdrop-filter: blur(20px);
-                    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
+                    box-shadow: var(--shadow-md);
                 }
 
                 .v-map-header {
@@ -542,7 +535,7 @@ export default function VisitorInfoClient() {
                 .v-map-title {
                     font-family: var(--ff-display), serif;
                     font-size: 1.6rem;
-                    color: #FFF;
+                    color: var(--charcoal);
                     font-weight: 800;
                 }
 
@@ -563,7 +556,7 @@ export default function VisitorInfoClient() {
                     font-family: var(--ff-display), serif;
                     font-size: clamp(1.8rem, 4vw, 2.5rem);
                     font-weight: 800;
-                    color: #FFFFFF;
+                    color: var(--charcoal);
                     line-height: 1.2;
                 }
 
@@ -576,21 +569,20 @@ export default function VisitorInfoClient() {
                 }
 
                 .v-card {
-                    background: rgba(20, 15, 10, 0.88);
-                    border: 1px solid rgba(212, 175, 55, 0.35);
-                    border-radius: 20px;
+                    background: var(--ivory);
+                    border: 1px solid var(--border-light);
+                    border-radius: var(--radius-lg);
                     overflow: hidden;
-                    backdrop-filter: blur(15px);
-                    transition: all 0.3s ease;
+                    transition: var(--transition);
                     display: flex;
                     flex-direction: column;
-                    box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+                    box-shadow: var(--shadow-sm);
                 }
 
                 .v-card:hover {
                     transform: translateY(-5px);
-                    border-color: rgba(212, 175, 55, 0.7);
-                    box-shadow: 0 20px 45px rgba(0,0,0,0.7);
+                    border-color: var(--border-mid);
+                    box-shadow: var(--shadow-md);
                 }
 
                 .v-card-img {
@@ -609,7 +601,7 @@ export default function VisitorInfoClient() {
                     font-size: 1.35rem;
                     font-family: var(--ff-display), serif;
                     margin-bottom: 1rem;
-                    color: #FFF;
+                    color: var(--charcoal);
                     font-weight: 800;
                 }
 
@@ -626,7 +618,7 @@ export default function VisitorInfoClient() {
                     align-items: flex-start;
                     gap: 0.45rem;
                     font-size: 0.85rem;
-                    color: rgba(255, 255, 255, 0.85);
+                    color: var(--text-muted);
                     line-height: 1.45;
                 }
 
@@ -642,25 +634,25 @@ export default function VisitorInfoClient() {
                 }
 
                 .emg-card {
-                    background: rgba(20, 15, 10, 0.88);
-                    border: 1px solid rgba(212, 175, 55, 0.35);
-                    border-radius: 20px;
+                    background: var(--ivory);
+                    border: 1px solid var(--border-light);
+                    border-radius: var(--radius-lg);
                     padding: 1.75rem 1.5rem;
-                    backdrop-filter: blur(15px);
-                    transition: all 0.3s ease;
+                    transition: var(--transition);
                     display: flex;
                     flex-direction: column;
-                    box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+                    box-shadow: var(--shadow-sm);
                 }
 
                 .emg-card:hover {
-                    border-color: rgba(212, 175, 55, 0.6);
+                    border-color: var(--border-mid);
                     transform: translateY(-3px);
+                    box-shadow: var(--shadow-md);
                 }
 
                 .sos-card-red {
                     border-color: rgba(248, 113, 113, 0.45);
-                    background: rgba(30, 15, 15, 0.88);
+                    background: #fffdfd;
                 }
 
                 .emg-icon-box {
@@ -684,13 +676,13 @@ export default function VisitorInfoClient() {
                     font-family: var(--ff-display), serif;
                     font-size: 1.3rem;
                     font-weight: 800;
-                    color: #FFF;
+                    color: var(--charcoal);
                     margin-bottom: 0.6rem;
                 }
 
                 .emg-card p {
                     font-size: 0.84rem;
-                    color: rgba(255, 255, 255, 0.8);
+                    color: var(--text-muted);
                     margin-bottom: 1.5rem;
                     line-height: 1.5;
                 }
@@ -729,7 +721,7 @@ export default function VisitorInfoClient() {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    border-bottom: 1px solid rgba(255,255,255,0.08);
+                    border-bottom: 1px solid var(--border-light);
                     padding-bottom: 0.6rem;
                 }
 
@@ -737,14 +729,14 @@ export default function VisitorInfoClient() {
                     text-align: left;
                     font-weight: 600;
                     font-size: 0.84rem;
-                    color: rgba(255,255,255,0.85);
+                    color: var(--charcoal);
                 }
 
                 .emg-label small {
                     display: block;
                     font-size: 0.68rem;
-                    color: rgba(212, 175, 55, 0.8);
-                    font-weight: 400;
+                    color: var(--gold);
+                    font-weight: 600;
                     text-transform: uppercase;
                 }
 

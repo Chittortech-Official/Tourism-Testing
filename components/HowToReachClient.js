@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Image from 'next/image';
 
 import { useEffect, useState, useRef } from "react";
@@ -36,7 +36,7 @@ const TRANSPORT = [
         icon: "/airport.jpg",
         mode: "By Air",
         badge: null,
-        bookUrl: "https://www.google.com/search?q=flight+booking+sites&oq=flight+booking+sites+&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCDgyMTRqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8",
+        bookUrl: "https://www.google.com/search?q=flight+booking+sites",
     },
     {
         _key: "bus",
@@ -130,7 +130,7 @@ function LocationPrompt({ onCityDetected }) {
     return (
         <div className="htr-location-overlay">
             <div className="htr-location-card">
-                <div className="htr-location-icon">ðŸ“</div>
+                <div className="htr-location-icon">📍</div>
 
                 {step === "prompt" && (
                     <>
@@ -138,10 +138,10 @@ function LocationPrompt({ onCityDetected }) {
                         <p className="htr-location-sub">{t("htr.locPromptSub")}</p>
                         <div className="htr-location-actions">
                             <button className="htr-loc-btn-primary" onClick={handleGPS}>
-                                <span>ðŸ“¡</span> {t("htr.detectLoc")}
+                                <span>📡</span> {t("htr.detectLoc")}
                             </button>
                             <button className="htr-loc-btn-secondary" onClick={() => { setStep("manual"); setTimeout(() => inputRef.current?.focus(), 100); }}>
-                                âœï¸ {t("htr.enterCity")}
+                                ✍️ {t("htr.enterCity")}
                             </button>
                         </div>
                         <button className="htr-loc-skip" onClick={handleSkip}>{t("htr.skip")}</button>
@@ -175,7 +175,7 @@ function LocationPrompt({ onCityDetected }) {
                                 onClick={handleManualConfirm}
                                 disabled={!manualInput.trim()}
                             >
-                                {t("htr.confirm")} â†’
+                                {t("htr.confirm")} →
                             </button>
                         </div>
                         <div className="htr-popular-row">
@@ -258,28 +258,28 @@ export default function HowToReachClient() {
                 {cityMatch?.local ? (
                     <div className="htr-detected-pill-wrap">
                         <span className="htr-detected-pill">
-                            ðŸ“ {t("htr.welcomeLocal").replace("{city}", fromCity)}
+                            📍 {t("htr.welcomeLocal").replace("{city}", fromCity)}
                         </span>
                         <button className="htr-change-city" onClick={handleChangeCity}>
-                            {t("htr.changePoint")} âœŽ
+                            {t("htr.changePoint")} ✏️
                         </button>
                     </div>
                 ) : cityMatch ? (
                     <div className="htr-detected-pill-wrap">
                         <span className="htr-detected-pill">
-                            ðŸ“ {t("htr.from")}: {fromCity} ~{cityMatch.km} km &nbsp;Â·&nbsp; {t("htr.drive")} {cityMatch.drive} &nbsp;Â·&nbsp; {t("htr.train")} {cityMatch.train}
+                            📍 {t("htr.from")}: {fromCity} ~{cityMatch.km} km &nbsp;·&nbsp; {t("htr.drive")} {cityMatch.drive} &nbsp;·&nbsp; {t("htr.train")} {cityMatch.train}
                         </span>
                         <button className="htr-change-city" onClick={handleChangeCity}>
-                            {t("htr.changeCity")} âœŽ
+                            {t("htr.changeCity")} ✏️
                         </button>
                     </div>
                 ) : fromCity ? (
                     <div className="htr-detected-pill-wrap">
                         <span className="htr-detected-pill">
-                            ðŸ“ {t("htr.travellingFrom").replace("{city}", fromCity)}
+                            📍 {t("htr.travellingFrom").replace("{city}", fromCity)}
                         </span>
                         <button className="htr-change-city" onClick={handleChangeCity}>
-                            {t("htr.changeCity")} âœŽ
+                            {t("htr.changeCity")} ✏️
                         </button>
                     </div>
                 ) : null}
@@ -308,12 +308,12 @@ export default function HowToReachClient() {
                                         <ul className="htr-card-details">
                                             {[0, 1, 2].map((i) => (
                                                 <li key={i}>
-                                                    <span className="htr-bullet">âœ¦</span>{t(`htr.detail.${item._key}.${i}`)}
+                                                    <span className="htr-bullet">✦</span>{t(`htr.detail.${item._key}.${i}`)}
                                                 </li>
                                             ))}
                                         </ul>
                                         <a href={item.bookUrl} target="_blank" rel="noopener noreferrer" className="htr-book-btn">
-                                            {t(`htr.btn.${item._key}`)} â†’
+                                            {t(`htr.btn.${item._key}`)} →
                                         </a>
                                     </div>
                                 </div>
@@ -346,7 +346,7 @@ export default function HowToReachClient() {
                                         <tr key={d.city} className={isHighlight ? "htr-row-highlight" : ""}>
                                             <td>
                                                 {t(`htr.city.${d.city}`)}
-                                                {isHighlight && <span className="htr-you-tag">â† {t("htr.you")}</span>}
+                                                {isHighlight && <span className="htr-you-tag">← {t("htr.you")}</span>}
                                             </td>
                                             <td>{d.km} km</td>
                                             <td>{d.drive}</td>
@@ -402,7 +402,7 @@ export default function HowToReachClient() {
             </section>
 
             <div className="htr-cta">
-                <span className="htr-cta-emblem">ðŸ°</span>
+                <span className="htr-cta-emblem">🏰</span>
                 <h2 className="htr-cta-title">{t("htr.cta.title")}</h2>
                 <p className="htr-cta-sub">{t("htr.cta.sub")}</p>
                 <div className="htr-cta-buttons" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1.5rem', flexWrap: 'wrap' }}>
@@ -415,4 +415,3 @@ export default function HowToReachClient() {
         </div>
     );
 }
-
