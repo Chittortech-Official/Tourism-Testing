@@ -46,7 +46,7 @@ export default function PanchGauravClient() {
             icon: Landmark,
             tagKey: "pg.tag.dest",
             tag: "DESTINATION",
-            image: "/Image_3.jpg" 
+            image: "/hero_bg.jpg" 
         },
         { 
             key: "4", 
@@ -93,7 +93,7 @@ export default function PanchGauravClient() {
                     left: 0;
                     width: 100%;
                     height: 100vh;
-                    background: url('/Image_3.jpg') no-repeat center center / cover;
+                    background: url('/hero_bg.jpg') no-repeat center center / cover;
                     z-index: 0;
                     pointer-events: none;
                 }
@@ -269,7 +269,7 @@ export default function PanchGauravClient() {
                 }
 
                 .pillar-no-tag {
-                    color: #D4AF37;
+                    color: #B8860B;
                     font-size: 0.7rem;
                     font-weight: 800;
                     letter-spacing: 0.14em;
@@ -301,9 +301,9 @@ export default function PanchGauravClient() {
                     gap: 0.5rem;
                     padding-top: 0.85rem;
                     border-top: 1px solid rgba(212, 175, 55, 0.2);
-                    color: #F3E5AB;
+                    color: #B8860B;
                     font-size: 0.75rem;
-                    font-weight: 700;
+                    font-weight: 800;
                 }
 
                 /* OBJECTIVES SECTION */
@@ -380,8 +380,9 @@ export default function PanchGauravClient() {
 
                 .ai-note-text {
                     font-size: 0.78rem;
-                    color: rgba(255, 255, 255, 0.6);
+                    color: var(--text-muted);
                     font-style: italic;
+                    font-weight: 500;
                 }
 
                 .btn-home-cta {
@@ -461,7 +462,7 @@ export default function PanchGauravClient() {
                                             className="pillar-image"
                                             onError={(e) => {
                                                 e.currentTarget.onerror = null;
-                                                e.currentTarget.src = "/Image_3.jpg";
+                                                e.currentTarget.src = "/hero_bg.jpg";
                                             }}
                                         />
                                         <div className="pillar-img-overlay"></div>

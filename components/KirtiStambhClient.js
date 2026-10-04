@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import ImageGallery from "@/components/ImageGallery";
 
 import { useLanguage } from "@/context/LanguageContext";
@@ -99,7 +99,7 @@ export default function KirtiStambhClient() {
                 .fort-page {
                     background: #ffffff !important;
                     color: #333;
-                    min-height: 100vh;
+                    min-height: 55vh;
                     font-family: var(--ff-sans);
                     overflow-x: hidden;
                     display: block;
@@ -192,6 +192,19 @@ export default function KirtiStambhClient() {
                     z-index: 2;
                 }
 
+
+                .fort-title-section {
+                    padding: 10rem 1.5rem 3rem;
+                    background: #ffffff;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 5;
+                    position: relative;
+                }
+
                 .hero-bg {
                     position: absolute;
                     inset: 0;
@@ -201,12 +214,7 @@ export default function KirtiStambhClient() {
                     will-change: transform;
                 }
 
-                .hero-overlay {
-                    position: absolute;
-                    inset: 0;
-                    background: radial-gradient(circle at center, rgba(10, 8, 4, 0.5) 0%, rgba(10, 8, 4, 0.95) 100%);
-                    z-index: -1;
-                }
+                
 
                 .hero-content {
                     max-width: 1000px;
@@ -251,10 +259,14 @@ export default function KirtiStambhClient() {
                 }
 
                 .hero-title {
-                    font-size: clamp(3.5rem, 12vw, 7.5rem);
-                    line-height: 1;
-                    margin-bottom: 2.5rem;
-                    text-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                    font-size: clamp(3.5rem, 10vw, 5rem);
+                    line-height: 1.1;
+                    margin-bottom: 1.5rem;
+                    background: none !important;
+                    -webkit-text-fill-color: #111 !important;
+                    color: #111 !important;
+                    text-shadow: none !important;
+                    filter: none !important;
                 }
 
                 .hero-desc {
@@ -356,19 +368,35 @@ export default function KirtiStambhClient() {
                 html {
                     scroll-behavior: smooth;
                 }
+
+                .kirti-gallery-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 1.5rem;
+                    padding: 0 1.5rem;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+                .k-gal-img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 16px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    transition: transform 0.4s ease, box-shadow 0.4s ease;
+                    display: block;
+                }
+                .k-gal-img:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+                }
+
             `}</style>
 
             {/* â•â•â• HERO SECTION â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
-            <section className="fort-hero">
-                <motion.div 
-                    style={{ 
-                        scale: heroScale,
-                        backgroundImage: "url('/kirti_stambha.jpg')"
-                    }} 
-                    className="hero-bg"
-                ></motion.div>
-                <div className="hero-overlay"></div>
-                
+            
+            
+            
+            <section className="fort-title-section">
                 <motion.div 
                     variants={containerVariants}
                     className="hero-content"
@@ -377,7 +405,7 @@ export default function KirtiStambhClient() {
                         <ArrowLeft size={18} /> {t("btn.back") || "Back"}
                     </motion.button>
                     <motion.span variants={itemVariants} className="hero-eyebrow">{t("kirti.hero.eyebrow")}</motion.span>
-                    <motion.h1 variants={itemVariants} className="hero-title aura-heading">{t("kirti.hero.title")}</motion.h1>
+                    <motion.h1 variants={itemVariants} className="hero-title">{t("kirti.hero.title")}</motion.h1>
                     <motion.p variants={itemVariants} className="hero-desc">
                         {t("kirti.hero.desc")?.split('. ').map((sentence, idx) => (
                             <motion.span 
@@ -390,9 +418,8 @@ export default function KirtiStambhClient() {
                         ))}
                     </motion.p>
                 </motion.div>
-                
-                {/* NO SCROLL INDICATOR */}
             </section>
+
 
             <main className="fort-main">
                 {/* â•â•â• HISTORY â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
@@ -529,7 +556,29 @@ export default function KirtiStambhClient() {
                 </motion.section>
             
                 {/* ═══ GALLERY ══════════════════════════ */}
-                <ImageGallery images={[]} />
+                
+                {/* ═══ GALLERY ══════════════════════════ */}
+                <motion.section 
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                    variants={containerVariants}
+                    className="fort-section"
+                    style={{ paddingTop: 0, paddingBottom: '6rem' }}
+                >
+                    <div className="section-header" style={{ marginBottom: '3.5rem' }}>
+                        <motion.h2 variants={itemVariants} className="section-title" style={{ fontSize: '2.5rem', background: 'none', WebkitTextFillColor: '#111', color: '#111', filter: 'none' }}>
+                            Gallery of Kirti Stambh
+                        </motion.h2>
+                        <motion.div variants={itemVariants} className="title-divider"></motion.div>
+                    </div>
+                    <div className="kirti-gallery-grid">
+                        <motion.img variants={itemVariants} src="/Kirti Stambh Images/Kirti Stambh 1.jpg" alt="Kirti Stambh" className="k-gal-img" />
+                        <motion.img variants={itemVariants} src="/Kirti Stambh Images/Kirti Stambh2.jpg" alt="Kirti Stambh 2" className="k-gal-img" />
+                        <motion.img variants={itemVariants} src="/Kirti Stambh Images/Kirti Stambh5.jpg" alt="Kirti Stambh 5" className="k-gal-img" />
+                    </div>
+                </motion.section>
+
             </main>
 
         </motion.div>
