@@ -149,7 +149,7 @@ export default function SanwaliyaClient() {
 
             
                 {/* ═══ GALLERY ══════════════════════════ */}
-                <ImageGallery images={TEMP_GALLERY_IMAGES} />
+                <ImageGallery images={[]} />
             </main>
 
             <style jsx global>{`

@@ -206,7 +206,7 @@ export default function SitamataClient() {
 
             
                 {/* ═══ GALLERY ══════════════════════════ */}
-                <ImageGallery images={TEMP_GALLERY_IMAGES} />
+                <ImageGallery images={[]} />
             </main>
 
             <style jsx global>{`

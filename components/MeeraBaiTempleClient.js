@@ -552,7 +552,7 @@ export default function MeeraBaiTempleClient() {
                 </motion.section>
             
                 {/* ═══ GALLERY ══════════════════════════ */}
-                <ImageGallery images={TEMP_GALLERY_IMAGES} />
+                <ImageGallery images={[]} />
             </main>
         </motion.div>
     );
