@@ -26,7 +26,7 @@ export default function StaysClient() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
-                            style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontFamily: 'var(--ff-display)', color: 'var(--clr-text)' }}
+                            style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontFamily: 'var(--ff-display)', color: '#2C2C2C' }}
                         >
                             Premium Stays & Heritage Hotels
                         </motion.h1>
@@ -34,7 +34,7 @@ export default function StaysClient() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            style={{ fontSize: '1.2rem', color: 'var(--clr-text-muted)', marginTop: '1rem', maxWidth: '600px', margin: '1rem auto 0' }}
+                            style={{ fontSize: '1.2rem', color: '#4A4A4A', marginTop: '1rem', maxWidth: '600px', margin: '1rem auto 0' }}
                         >
                             Find the perfect accommodation near Chittorgarh Fort. Experience royal heritage, modern luxury, and breathtaking views.
                         </motion.p>
@@ -49,8 +49,8 @@ export default function StaysClient() {
                             textAlign: 'center'
                         }}>
                             <h2 style={{ fontSize: '2rem', fontFamily: 'var(--ff-display)', color: '#D4AF37', marginBottom: '1rem' }}>Heritage Properties</h2>
-                            <p style={{ color: 'var(--clr-text)', lineHeight: '1.6' }}>
-                                From Kesarbagh Palace to Hotel Pride of Chittor, immerse yourself in the rich culture and hospitality of Mewar.
+                            <p style={{ color: '#2C2C2C', lineHeight: '1.6' }}>
+                                Immerse yourself in the rich culture and hospitality of Mewar.
                                 Detailed hotel listings and booking integrations are currently being updated to bring you the best experience.
                             </p>
                         </div>
@@ -378,6 +378,36 @@ export default function StaysClient() {
                     width: 60px;
                     background: #D4AF37;
                     margin: 1rem auto;
+                }
+
+                @media (max-width: 900px) {
+                    .featured-card {
+                        grid-template-columns: 1fr;
+                    }
+                    .featured-image-container {
+                        min-height: 280px;
+                    }
+                    .featured-info {
+                        padding: 1.5rem;
+                    }
+                    .featured-title {
+                        font-size: 1.6rem;
+                    }
+                    .featured-actions {
+                        flex-direction: column;
+                        gap: 0.5rem;
+                    }
+                    .btn-featured-booking {
+                        width: 100%;
+                    }
+                    .smart-badges {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 0.5rem;
+                    }
+                    .smart-pill {
+                        width: 100%;
+                    }
                 }
             `}</style>
         </div>

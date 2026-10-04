@@ -127,7 +127,7 @@ function LocationPrompt({ onCityDetected, t }) {
     return (
         <div className="v-loc-overlay">
             <div className="v-loc-card glass-premium">
-                <div className="v-loc-icon">ðŸ“</div>
+                <div className="v-loc-icon" style={{ display: 'flex', justifyContent: 'center' }}><MapPin size={48} color="#D4AF37" /></div>
                 {step === "prompt" && (
                     <>
                         <h3 className="v-loc-title">{t("htr.locPromptTitle")}</h3>
@@ -375,6 +375,13 @@ export default function VisitorInfoClient() {
                     margin-bottom: 1rem;
                 }
 
+                .v-error-text {
+                    color: #000000;
+                    margin-bottom: 1rem;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                }
+
                 .v-loc-title {
                     font-family: var(--ff-display), serif;
                     font-size: 1.8rem;
@@ -447,10 +454,15 @@ export default function VisitorInfoClient() {
                 .v-loc-skip {
                     background: none;
                     border: none;
-                    color: rgba(255, 255, 255, 0.5);
+                    color: var(--text-muted);
                     font-size: 0.8rem;
                     cursor: pointer;
                     margin-top: 1.25rem;
+                    text-decoration: underline;
+                    transition: color 0.2s;
+                }
+                .v-loc-skip:hover {
+                    color: var(--charcoal);
                 }
 
                 .v-loc-input {
