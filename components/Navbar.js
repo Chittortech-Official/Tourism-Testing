@@ -18,7 +18,8 @@ import {
     Ticket,
     X,
     ChevronRight,
-    PhoneCall
+    PhoneCall,
+    FileText
 } from "lucide-react";
 
 export default function Navbar() {
@@ -89,7 +90,7 @@ export default function Navbar() {
         { href: "/stays", label: getNavLabel("nav.stays", "Stays"), icon: <BedDouble size={18} /> },
         { href: "/visitor-info", label: getNavLabel("nav.visitorInfo", "Visitor Info"), icon: <Info size={18} /> },
         { href: "/panch-gaurav", label: getNavLabel("nav.panchGaurav", "Panch Gaurav"), icon: <Award size={18} /> },
-        { href: "/emergency", label: getNavLabel("nav.emergency", "Emergency"), icon: <ShieldAlert size={18} /> },
+        { href: "/guide-list", label: getNavLabel("nav.guideList", "Guide List"), icon: <FileText size={18} /> },
         { href: "https://docs.google.com/forms/d/e/1FAIpQLSeBDx8SK9Rm-S0QBO6wCFV5v-pfE6uCYTYU6ubMR5jNDOkpOA/viewform", label: getNavLabel("nav.feedback", "Feedback"), icon: <MessageSquareQuote size={18} />, isExternal: true },
         { href: "/contact-us", label: getNavLabel("nav.contactUs", "Contact Us"), icon: <Mail size={18} /> },
     ];

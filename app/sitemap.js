@@ -30,6 +30,18 @@ export default async function sitemap() {
             priority: 0.6,
         },
         {
+            url: `${baseUrl}/guide-list`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/emergency`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
             url: `${baseUrl}/how-to-reach`,
             lastModified: new Date(),
             changeFrequency: 'monthly',

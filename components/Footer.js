@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,6 +9,8 @@ const navLinks = [
     { key: "nav.explore", href: "/explore" },
     { key: "nav.bookTickets", href: "https://eticket.webfront.in/asi/quick/chf", isExternal: true },
     { key: "nav.visitorInfo", href: "/visitor-info" },
+    { key: "nav.guideList", href: "/guide-list" },
+    { key: "nav.emergency", href: "/emergency" },
     { key: "nav.contactUs", href: "/contact-us" },
 ];
 

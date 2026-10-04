@@ -8,6 +8,7 @@ import { Map, Zap, Headphones, Castle, Shield, Droplets, Award, ArrowUpRight } f
 
 import FAQ from "./FAQ";
 import QRScannerButton from "./QRScannerButton";
+import HeroCarousel from "./HeroCarousel";
 
 export default function HomeClient() {
     const { t } = useLanguage();
@@ -21,7 +22,8 @@ export default function HomeClient() {
 
 
             {/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â HERO SECTION Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */}
-            <header id="home" className="editorial-hero" style={{ padding: "2rem 1.5rem 1rem", justifyContent: "center" }}>
+            <HeroCarousel />
+            <header id="home" className="editorial-hero" style={{ padding: "3rem 1.5rem 2rem", justifyContent: "center" }}>
                 <div className="editorial-content" style={{ textAlign: "center", width: "100%" }}>
                     <motion.div 
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -357,17 +359,17 @@ export default function HomeClient() {
                     font-weight: 400;
                 }
 
-                /* EDITORIAL HERO SECTION */
+                /* EDITORIAL HERO SECTION (BELOW BANNER) */
                 .editorial-hero {
                     position: relative;
-                    min-height: clamp(500px, 85vh, 900px);
+                    min-height: auto;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     background: linear-gradient(135deg, #181512 0%, #2A241C 50%, #0A0806 100%);
-                    box-shadow: inset 0 0 150px rgba(0,0,0,0.8);
+                    box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
                     border-bottom: 2px solid rgba(212, 175, 55, 0.2);
-                    padding: 8rem 2rem 5rem;
+                    padding: 4rem 1.5rem 3.5rem;
                     overflow: hidden;
                     width: 100%;
                 }
