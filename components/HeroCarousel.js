@@ -56,13 +56,7 @@ export default function HeroCarousel() {
               key={idx}
               className={`hc-slide ${isActive ? "hc-active" : ""}`}
             >
-              {/* Ambient Background Blur to fill desktop wide container seamlessly */}
-              <div 
-                className="hc-bg-blur" 
-                style={{ backgroundImage: `url("${encodeURI(img.src)}")` }} 
-              />
-              
-              {/* 100% Uncropped Foreground Image */}
+              {/* 100% Full Edge-to-Edge Fill (Zero Left/Right Empty Space) */}
               <div className="hc-fg-wrapper">
                 <img
                   src={img.src}
@@ -90,14 +84,14 @@ export default function HeroCarousel() {
       </div>
 
       <style jsx>{`
-        /* Desktop / Laptop View (Full Height, Uncropped Banner) */
+        /* Desktop / Laptop View */
         .hc-section {
           position: relative;
           width: 100%;
-          height: clamp(420px, 62vh, 680px);
+          height: clamp(450px, 65vh, 720px);
           margin-top: 65px;
           padding: 0;
-          background: #09090b;
+          background: #000;
           overflow: hidden;
           border-bottom: 2px solid rgba(212, 175, 55, 0.35);
         }
@@ -111,7 +105,7 @@ export default function HeroCarousel() {
           padding: 0;
         }
 
-        /* Clean transition without ghosting */
+        /* Clean fade transition without ghosting */
         .hc-slide {
           position: absolute;
           inset: 0;
@@ -128,56 +122,40 @@ export default function HeroCarousel() {
           z-index: 2;
         }
 
-        /* Ambient Background Blur Layer for Desktop & Mobile */
-        .hc-bg-blur {
-          position: absolute;
-          inset: -30px;
-          background-size: cover;
-          background-position: center;
-          filter: blur(28px) brightness(0.38) saturate(1.2);
-          z-index: 1;
-          transform: scale(1.15);
-        }
-
         .hc-fg-wrapper {
           position: absolute;
           inset: 0;
           width: 100%;
           height: 100%;
-          z-index: 2;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 10px;
-          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
         }
 
-        /* object-fit: contain guarantees 100% FULL image without cutting top, bottom, or sides */
+        /* 100% FULL WIDTH & HEIGHT FILL — ZERO EMPTY SPACE ON LEFT OR RIGHT */
         .hc-fg-img {
-          max-width: 100%;
-          max-height: 100%;
-          width: auto;
-          height: auto;
-          object-fit: contain;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
           object-position: center;
-          filter: drop-shadow(0 12px 30px rgba(0,0,0,0.8));
-          border-radius: 6px;
+          margin: 0;
+          padding: 0;
+          border-radius: 0;
         }
 
-        /* Dots positioned low at bottom */
+        /* Slide dots positioned at bottom edge */
         .hc-dots-container {
           position: absolute;
-          bottom: 12px;
+          bottom: 10px;
           left: 50%;
           transform: translateX(-50%);
           display: flex;
           gap: 8px;
           z-index: 10;
-          background: rgba(0, 0, 0, 0.55);
+          background: rgba(0, 0, 0, 0.5);
           padding: 4px 12px;
           border-radius: 16px;
           backdrop-filter: blur(6px);
-          border: 1px solid rgba(212, 175, 55, 0.35);
+          border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .hc-dot {
@@ -197,14 +175,11 @@ export default function HeroCarousel() {
           box-shadow: 0 0 8px rgba(212, 175, 55, 0.9);
         }
 
-        /* Mobile View (Perfect Uncropped Ratio) */
+        /* Mobile View (Full Screen Width Edge-to-Edge) */
         @media (max-width: 768px) {
           .hc-section {
-            height: clamp(320px, 50vh, 480px);
+            height: clamp(320px, 52vh, 480px);
             margin-top: 55px;
-          }
-          .hc-fg-wrapper {
-            padding: 6px;
           }
           .hc-dots-container {
             bottom: 6px;
