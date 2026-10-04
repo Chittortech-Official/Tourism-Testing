@@ -162,6 +162,9 @@ export default function PadminiPalaceClient() {
                     </div>
                 </section>
 
+            
+                {/* ═══ GALLERY ══════════════════════════ */}
+                <ImageGallery images={TEMP_GALLERY_IMAGES} />
             </main>
 
             <style jsx global>{`
@@ -172,8 +175,8 @@ export default function PadminiPalaceClient() {
                 }
 
                 .fort-page {
-                    background: #0a0804 !important;
-                    color: #fff;
+                    background: #ffffff !important;
+                    color: #333;
                     min-height: 100vh;
                     font-family: var(--ff-sans);
                     overflow-x: hidden;
@@ -185,7 +188,7 @@ export default function PadminiPalaceClient() {
                     font-family: var(--ff-serif);
                     font-weight: 700;
                     letter-spacing: -0.02em;
-                    background: linear-gradient(135deg, #fff 0%, var(--gold) 50%, #d4af37 100%);
+                    background: linear-gradient(135deg, #111 0%, var(--gold) 50%, #d4af37 100%);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
@@ -198,7 +201,7 @@ export default function PadminiPalaceClient() {
                 }
 
                 .fort-page p {
-                    color: #fff !important;
+                    color: #333 !important;
                     line-height: 1.8;
                     font-size: 1.15rem;
                     margin-bottom: 2rem;
@@ -266,7 +269,7 @@ export default function PadminiPalaceClient() {
                     display: inline-flex;
                     align-items: center;
                     gap: 0.5rem;
-                    color: #fff;
+                    color: #333;
                     font-size: 0.8rem;
                     margin-bottom: 3rem;
                     text-transform: uppercase;
@@ -296,9 +299,9 @@ export default function PadminiPalaceClient() {
 
                 .hero-title {
                     font-size: clamp(2.5rem, 8vw, 5rem);
-                    color: #fff;
+                    color: #333;
                     margin-bottom: 2rem;
-                    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+                    text-shadow: 0 4px 15px rgba(0,0,0,0.1);
                 }
 
                 .hero-desc {
@@ -363,7 +366,7 @@ export default function PadminiPalaceClient() {
                     padding: 5rem 1.5rem;
                     max-width: 1200px;
                     margin: 0 auto;
-                    background: #0a0804 !important;
+                    background: #ffffff !important;
                 }
 
                 .section-header {
@@ -575,7 +578,7 @@ export default function PadminiPalaceClient() {
                 }
 
                 .read-more-btn:hover {
-                    color: #fff;
+                    color: #333;
                     text-shadow: 0 0 10px rgba(212,175,55,0.5);
                     transform: translateX(5px);
                 }

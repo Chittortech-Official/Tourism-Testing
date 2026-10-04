@@ -1231,14 +1231,14 @@ function GlassCard({ title, desc, time, dist, delay, link, image, imgPos = 'cent
                     {/* META DETAILS */}
                     <div className="card-meta">
                         <div className="meta-row">
-                            <Calendar className="meta-icon" />
+                            <span className="meta-icon" style={{ fontSize: '1.2rem', marginRight: '6px' }}>📅</span>
                             <div>
                                 <span className="meta-label">{t("lbl.bestTime")}</span>
                                 <span className="meta-val">{time}</span>
                             </div>
                         </div>
                         <div className="meta-row">
-                            <MapPin className="meta-icon" />
+                            <span className="meta-icon" style={{ fontSize: '1.2rem', marginRight: '6px' }}>📍</span>
                             <div>
                                 <span className="meta-label">{t("lbl.distance")}</span>
                                 <span className="meta-val">{dist}</span>
@@ -1253,7 +1253,7 @@ function GlassCard({ title, desc, time, dist, delay, link, image, imgPos = 'cent
                             className="btn-action-direction"
                             title={t("btn.directions")}
                         >
-                            <Navigation size={14} />
+                            <span style={{ fontSize: '1.1rem', marginRight: '4px' }}>🧭</span>
                             <span>{t("btn.directions")}</span>
                         </button>
 

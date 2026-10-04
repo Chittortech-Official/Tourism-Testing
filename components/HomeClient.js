@@ -226,7 +226,7 @@ export default function HomeClient() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
                     >
-                        Ã¢â‚¬â€ {t("quote.cite")}
+                        {t("quote.cite")}
                     </motion.cite>
                 </div>
             </section>

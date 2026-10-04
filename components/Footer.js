@@ -28,8 +28,11 @@ export default function Footer() {
                 <div className="footer-grid">
                     {/* Brand column */}
                     <div className="footer-brand">
-                        <div className="footer-logo">
-                            {t("nav.logoPart1") || "Chittorgarh"}<span> {t("nav.logoPart2") || "Tourism"}</span>
+                        <div className="footer-logo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+                            <img src="/rtdc-logo.jpeg" alt="RTDC Logo" style={{ height: '32px', marginRight: '8px', borderRadius: '4px' }} />
+                            <div>
+                                {t("nav.logoPart1") || "Chittorgarh"}<span> {t("nav.logoPart2") || "Tourism"}</span>
+                            </div>
                         </div>
                         <p className="footer-tagline">{t("footer.desc")}</p>
                     </div>

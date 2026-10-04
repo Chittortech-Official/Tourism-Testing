@@ -110,8 +110,11 @@ export default function Navbar() {
                         pointerEvents: isContactPath ? 'none' : 'auto'
                     }}
                 >
-                    <div className="logo-name">
-                        {t("nav.logoPart1") || "Chittorgarh"}<span> {t("nav.logoPart2") || "Tourism"}</span>
+                    <div className="logo-name" style={{ display: 'flex', alignItems: 'center' }}>
+                        <img src="/rtdc-logo.jpeg" alt="RTDC Logo" style={{ height: '32px', marginRight: '8px', borderRadius: '4px' }} />
+                        <div>
+                            {t("nav.logoPart1") || "Chittorgarh"}<span> {t("nav.logoPart2") || "Tourism"}</span>
+                        </div>
                     </div>
                 </Link>
 
@@ -177,8 +180,8 @@ export default function Navbar() {
             <div className={`mobile-nav-drawer ${isMenuOpen ? "open" : ""}`}>
                 {/* Header inside Drawer */}
                 <div className="drawer-header">
-                    <div className="drawer-logo">
-                        <div className="drawer-logo-icon">🏰</div>
+                    <div className="drawer-logo" style={{ display: 'flex', alignItems: 'center' }}>
+                        <img src="/rtdc-logo.jpeg" alt="RTDC" style={{ height: '24px', marginRight: '8px', borderRadius: '4px' }} />
                         <div className="drawer-logo-text">
                             <span className="part1">{t("nav.logoPart1") || "Chittorgarh"}</span>
                             <span className="part2"> {t("nav.logoPart2") || "Tourism"}</span>

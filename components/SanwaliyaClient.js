@@ -121,7 +121,7 @@ export default function SanwaliyaClient() {
                         <div className="premium-glass" style={{ padding: '2rem', borderRadius: '16px' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.5rem' }}>
                                 <Clock size={24} color="var(--gold)" />
-                                <h3 style={{ margin: 0, color: '#fff' }}>{t("sanwaliya.timings.title")}</h3>
+                                <h3 style={{ margin: 0, color: '#333' }}>{t("sanwaliya.timings.title")}</h3>
                             </div>
                             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
                                 <li>{t("sanwaliya.timings.mangla")}</li>
@@ -135,7 +135,7 @@ export default function SanwaliyaClient() {
                         <div className="premium-glass" style={{ padding: '2rem', borderRadius: '16px' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.5rem' }}>
                                 <Phone size={24} color="var(--gold)" />
-                                <h3 style={{ margin: 0, color: '#fff' }}>{t("sanwaliya.info.contact")}</h3>
+                                <h3 style={{ margin: 0, color: '#333' }}>{t("sanwaliya.info.contact")}</h3>
                             </div>
                             <p style={{ marginBottom: '1rem' }}>{t("sanwaliya.info.phone")}</p>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -146,6 +146,9 @@ export default function SanwaliyaClient() {
                     </div>
                 </motion.section>
 
+            
+                {/* ═══ GALLERY ══════════════════════════ */}
+                <ImageGallery images={TEMP_GALLERY_IMAGES} />
             </main>
 
             <style jsx global>{`
@@ -156,8 +159,8 @@ export default function SanwaliyaClient() {
                 }
 
                 .fort-page {
-                    background: #0a0804 !important;
-                    color: #fff;
+                    background: #ffffff !important;
+                    color: #333;
                     min-height: 100vh;
                     font-family: var(--ff-sans);
                     overflow-x: hidden;
@@ -169,7 +172,7 @@ export default function SanwaliyaClient() {
                     font-family: var(--ff-serif);
                     font-weight: 700;
                     letter-spacing: -0.02em;
-                    background: linear-gradient(135deg, #fff 0%, var(--gold) 50%, #d4af37 100%);
+                    background: linear-gradient(135deg, #111 0%, var(--gold) 50%, #d4af37 100%);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
@@ -182,7 +185,7 @@ export default function SanwaliyaClient() {
                 }
 
                 .fort-page p {
-                    color: #fff !important;
+                    color: #333 !important;
                     line-height: 1.8;
                     font-size: 1.15rem;
                     margin-bottom: 2rem;
@@ -248,7 +251,7 @@ export default function SanwaliyaClient() {
                     display: inline-flex;
                     align-items: center;
                     gap: 0.5rem;
-                    color: #fff;
+                    color: #333;
                     font-size: 0.8rem;
                     margin-bottom: 2.5rem;
                     text-transform: uppercase;
@@ -278,9 +281,9 @@ export default function SanwaliyaClient() {
 
                 .hero-title {
                     font-size: clamp(2.5rem, 8vw, 5rem);
-                    color: #fff;
+                    color: #333;
                     margin-bottom: 2rem;
-                    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+                    text-shadow: 0 4px 15px rgba(0,0,0,0.1);
                 }
 
                 .hero-desc {
@@ -300,7 +303,7 @@ export default function SanwaliyaClient() {
                     padding: 5rem 1.5rem;
                     max-width: 1200px;
                     margin: 0 auto;
-                    background: #0a0804 !important;
+                    background: #ffffff !important;
                 }
 
                 .section-header {

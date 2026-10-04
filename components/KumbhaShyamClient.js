@@ -107,8 +107,8 @@ export default function KumbhaShyamClient() {
                 }
 
                 .fort-page {
-                    background: #0a0804 !important;
-                    color: #fff;
+                    background: #ffffff !important;
+                    color: #333;
                     min-height: 100vh;
                     font-family: var(--ff-sans);
                     overflow-x: hidden;
@@ -120,7 +120,7 @@ export default function KumbhaShyamClient() {
                     font-family: var(--ff-serif);
                     font-weight: 700;
                     letter-spacing: -0.01em;
-                    background: linear-gradient(135deg, #fff 0%, var(--gold) 50%, #d4af37 100%);
+                    background: linear-gradient(135deg, #111 0%, var(--gold) 50%, #d4af37 100%);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
@@ -147,7 +147,7 @@ export default function KumbhaShyamClient() {
                 }
 
                 .fort-page p {
-                    color: #e0e0e0 !important;
+                    color: #444 !important;
                     line-height: 1.8;
                     font-size: 1.15rem;
                     margin-bottom: 2rem;
@@ -177,14 +177,12 @@ export default function KumbhaShyamClient() {
 
                 /* --- Glassmorphism 2.0 --- */
                 .glass-panel {
-                    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+                    background: rgba(255, 255, 255, 0.6);
                     backdrop-filter: blur(16px);
                     border: 1px solid rgba(212, 175, 55, 0.2);
                     border-radius: 20px;
                     padding: 3rem;
-                    box-shadow: 
-                        0 10px 30px rgba(0,0,0,0.5),
-                        inset 0 0 20px rgba(212, 175, 55, 0.05);
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.05), inset 0 0 20px rgba(212, 175, 55, 0.05);
                     position: relative;
                     transition: border-color 0.4s ease;
                 }
@@ -230,7 +228,7 @@ export default function KumbhaShyamClient() {
                     display: inline-flex;
                     align-items: center;
                     gap: 0.75rem;
-                    color: #fff;
+                    color: #333;
                     font-size: 0.85rem;
                     letter-spacing: 2px;
                     text-transform: uppercase;
@@ -273,7 +271,7 @@ export default function KumbhaShyamClient() {
                     font-size: clamp(1.2rem, 3vw, 1.4rem);
                     max-width: 850px;
                     margin: 0 auto;
-                    color: rgba(255, 255, 255, 0.9) !important;
+                    color: #555 !important;
                 }
 
 
@@ -427,7 +425,7 @@ export default function KumbhaShyamClient() {
                         </div>
                         
                         <div className="glass-panel" style={{ textAlign: 'center' }}>
-                            <motion.p variants={itemVariants} className="lead-para" style={{ color: '#fff !important', fontSize: '1.3rem', fontWeight: 300 }}>
+                            <motion.p variants={itemVariants} className="lead-para" style={{ 'color': '#333 !important', fontSize: '1.3rem', fontWeight: 300 }}>
                                 {t("kumbha_shyam.history.p1")?.split('. ').map((sentence, idx) => (
                                     <motion.span 
                                         key={idx} 
@@ -484,7 +482,7 @@ export default function KumbhaShyamClient() {
                         </div>
 
                         <div className="glass-panel" style={{ textAlign: 'center' }}>
-                            <motion.p variants={itemVariants} style={{ color: '#fff !important', fontSize: '1.25rem' }}>
+                            <motion.p variants={itemVariants} style={{ 'color': '#333 !important', fontSize: '1.25rem' }}>
                                 {t("kumbha_shyam.architecture.p1")?.split('. ').map((sentence, idx) => (
                                     <motion.span 
                                         key={idx} 
@@ -536,6 +534,9 @@ export default function KumbhaShyamClient() {
 
                     </div>
                 </motion.section>
+            
+                {/* ═══ GALLERY ══════════════════════════ */}
+                <ImageGallery images={TEMP_GALLERY_IMAGES} />
             </main>
         </motion.div>
     );
