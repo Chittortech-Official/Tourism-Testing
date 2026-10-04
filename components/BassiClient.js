@@ -1,4 +1,5 @@
 ﻿"use client";
+import ImageGallery from "@/components/ImageGallery";
 import Image from 'next/image';
 
 import { useLanguage } from "@/context/LanguageContext";

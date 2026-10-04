@@ -1,4 +1,5 @@
 ﻿"use client";
+import ImageGallery from "@/components/ImageGallery";
 
 import { useLanguage } from "@/context/LanguageContext";
 import React, { useState, useEffect, useRef } from "react";
