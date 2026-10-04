@@ -102,6 +102,27 @@ export default function LightSoundShowClient() {
         >
             <KineticScroll progress={scrollYProgress} />
             <style jsx global>{`
+                .page-gallery-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 1.5rem;
+                    padding: 0 1.5rem;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+                .p-gal-img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 16px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    transition: transform 0.4s ease, box-shadow 0.4s ease;
+                    display: block;
+                }
+                .p-gal-img:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+                }
+
                 :root {
                     --ff-serif: 'Playfair Display', serif;
                     --ff-sans: 'Inter', sans-serif;
@@ -125,8 +146,8 @@ export default function LightSoundShowClient() {
                     font-weight: 700;
                     letter-spacing: -0.01em;
                     background: linear-gradient(135deg, #fff 0%, var(--gold) 60%, #b8860b 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    /* -webkit-background-clip: text; */
+                    -webkit-text-fill-color: #111 !important;
                     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
                     position: relative;
                 }
@@ -711,7 +732,28 @@ export default function LightSoundShowClient() {
 
                     </div>
                 </motion.section>
-            </main>
+            
+                {/* ═══ GALLERY ══════════════════════════ */}
+                <motion.section 
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                    className="fort-section"
+                    style={{ paddingTop: 0, paddingBottom: '6rem' }}
+                >
+                    <div className="section-header" style={{ marginBottom: '3.5rem' }}>
+                        <motion.h2 className="section-title" style={{ fontSize: '2.5rem', background: 'none', color: '#111', filter: 'none' }}>
+                            Gallery
+                        </motion.h2>
+                        <motion.div className="title-divider"></motion.div>
+                    </div>
+                    <div className="page-gallery-grid">
+                        <motion.img src="/Light Show Images/Light & Sound1.jpg" alt="Gallery Image" className="p-gal-img" />
+                        <motion.img src="/Light Show Images/Light & Sound2.jpg" alt="Gallery Image" className="p-gal-img" />
+                        <motion.img src="/Light Show Images/Light & Sound4.jpg" alt="Gallery Image" className="p-gal-img" />
+                    </div>
+                </motion.section>
+</main>
         </motion.div>
     );
 }

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import ImageGallery from "@/components/ImageGallery";
 import Image from 'next/image';
 
@@ -116,9 +116,10 @@ export default function FatehPrakashClient() {
                     font-family: var(--ff-serif);
                     font-weight: 700;
                     letter-spacing: -0.01em;
-                    background: linear-gradient(135deg, #111 0%, var(--gold) 50%, #d4af37 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    color: #111 !important;
+                    background: none !important;
+                    /* -webkit-background-clip: text; */
+                    -webkit-text-fill-color: #111 !important;
                     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
                     position: relative;
                 }
@@ -214,11 +215,45 @@ export default function FatehPrakashClient() {
                     z-index: -1;
                 }
 
+                
+                .fort-title-section {
+                    padding: 10rem 1.5rem 3rem;
+                    background: #ffffff;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 5;
+                    position: relative;
+                }
                 .hero-content {
                     max-width: 1000px;
                     padding: 0 1.5rem;
                     z-index: 10;
+                    width: 100%;
                 }
+                .page-gallery-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 1.5rem;
+                    padding: 0 1.5rem;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+                .p-gal-img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 16px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    transition: transform 0.4s ease, box-shadow 0.4s ease;
+                    display: block;
+                }
+                .p-gal-img:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+                }
+
 
                 .back-btn {
                     display: inline-flex;
@@ -257,13 +292,14 @@ export default function FatehPrakashClient() {
                 }
 
                 .hero-title {
-                    font-size: clamp(3.5rem, 12vw, 7.5rem);
-                    line-height: 1;
-                    margin-bottom: 2.5rem;
-                    text-shadow: 
-                        0 10px 30px rgba(0,0,0,0.8),
-                        0 0 80px rgba(0,0,0,0.4),
-                        0 0 120px rgba(212, 175, 55, 0.2);
+                    font-size: clamp(3.5rem, 10vw, 5rem);
+                    line-height: 1.1;
+                    margin-bottom: 1.5rem;
+                    background: none !important;
+                    -webkit-text-fill-color: #111 !important;
+                    color: #111 !important;
+                    text-shadow: none !important;
+                    filter: none !important;
                 }
 
                 .hero-desc {
@@ -420,15 +456,9 @@ export default function FatehPrakashClient() {
             `}</style>
 
             {/* â•â•â• HERO SECTION â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
-            <section className="fort-hero">
-                <motion.div 
-                    style={{ 
-                        scale: heroScale,
-                        backgroundImage: "url('/fateh_prakash_palace.jpg')" 
-                    }} 
-                    className="hero-bg"
-                ></motion.div>
-                <div className="hero-overlay"></div>
+            <section className="fort-title-section">
+                
+                
                 
                 <motion.div 
                     variants={containerVariants}
@@ -438,8 +468,8 @@ export default function FatehPrakashClient() {
                         <ArrowLeft size={18} /> {t("btn.back") || "Back"}
                     </motion.button>
                     <motion.span variants={itemVariants} className="hero-eyebrow">{t("fateh.hero.eyebrow")}</motion.span>
-                    <motion.h1 variants={itemVariants} className="hero-title aura-heading">{t("fateh.hero.title")}</motion.h1>
-                    <motion.p variants={itemVariants} className="hero-desc">
+                    <motion.h1 variants={itemVariants} className="hero-title">{t("fateh.hero.title")}</motion.h1>
+                    <motion.p variants={itemVariants} className="hero-desc" style={{ 'color': '#333 !important' }}>
                         {t("fateh.hero.desc")?.split('. ').map((sentence, idx) => (
                             <motion.span 
                                 key={idx} 
@@ -518,30 +548,6 @@ export default function FatehPrakashClient() {
                         <motion.div variants={itemVariants} className="title-divider"></motion.div>
                     </div>
 
-                    <div className="collection-grid">
-                        <motion.div 
-                            variants={itemVariants}
-                            whileHover={{ scale: 1.02 }}
-                            className="glass-panel gallery-item"
-                        >
-                            <Image 
-                                src="/images/fateh-prakash-arch.jpg" 
-                                alt="Fateh Prakash Palace Architecture 1"
-                                style={{ objectFit: "cover",  width: '100%', height: '100%', objectFit: 'cover', opacity: 0.9 }}
-                             width={1200} height={800}/>
-                        </motion.div>
-                        <motion.div 
-                            variants={itemVariants}
-                            whileHover={{ scale: 1.02 }}
-                            className="glass-panel gallery-item"
-                        >
-                            <Image 
-                                src="/images/fateh-prakash-arch2.jpg" 
-                                alt="Fateh Prakash Palace Architecture 2"
-                                style={{ objectFit: "cover",  width: '100%', height: '100%', objectFit: 'cover', opacity: 0.9 }}
-                             width={1200} height={800}/>
-                        </motion.div>
-                    </div>
 
                     <div className="glass-panel" style={{ textAlign: 'center' }}>
                         <motion.p variants={itemVariants} style={{ 'color': '#333 !important', fontSize: '1.25rem' }}>
@@ -628,7 +634,28 @@ export default function FatehPrakashClient() {
                 </motion.section>
             
                 {/* ═══ GALLERY ══════════════════════════ */}
-                <ImageGallery images={[]} />
+                
+                {/* ═══ GALLERY ══════════════════════════ */}
+                <motion.section initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{duration: 0.5}} 
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                    
+                    className="fort-section"
+                    style={{ paddingTop: 0, paddingBottom: '6rem' }}
+                >
+                    <div className="section-header" style={{ marginBottom: '3.5rem' }}>
+                        <motion.h2  className="section-title" style={{ fontSize: '2.5rem', background: 'none', WebkitTextFillColor: '#111', color: '#111', filter: 'none' }}>
+                            Gallery
+                        </motion.h2>
+                        <motion.div  className="title-divider"></motion.div>
+                    </div>
+                    <div className="page-gallery-grid">
+                        <motion.img src="/Prakash Place Images/Fateh Prakash4.jpg" alt="Fateh Prakash Palace" className="p-gal-img" />
+                        <motion.img src="/Prakash Place Images/Fateh Prakash6.JPG" alt="Fateh Prakash Palace" className="p-gal-img" />
+                    </div>
+                </motion.section>
+
             </main>
         </motion.div>
     );

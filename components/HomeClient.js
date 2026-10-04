@@ -334,7 +334,7 @@ export default function HomeClient() {
                     font-weight: 800;
                     margin-bottom: 1rem;
                     background: none; color: var(--text-main);
-                    -webkit-background-clip: text;
+                    /* -webkit-background-clip: text; */
                     
                     line-height: 1.35;
                     word-break: break-word;

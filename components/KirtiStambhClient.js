@@ -110,9 +110,10 @@ export default function KirtiStambhClient() {
                     font-family: var(--ff-serif);
                     font-weight: 700;
                     letter-spacing: -0.01em;
-                    background: linear-gradient(135deg, #111 0%, var(--gold) 50%, #d4af37 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    color: #111 !important;
+                    background: none !important;
+                    /* -webkit-background-clip: text; */
+                    -webkit-text-fill-color: #111 !important;
                     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
                     position: relative;
                 }

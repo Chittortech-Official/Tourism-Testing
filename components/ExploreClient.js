@@ -440,8 +440,8 @@ export default function ExploreClient() {
                     font-weight: 800;
                     margin-bottom: 0.6rem;
                     background: linear-gradient(135deg, #1C1B19 0%, #3A3732 50%, #8A682F 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    /* -webkit-background-clip: text; */
+                    -webkit-text-fill-color: #111 !important;
                     line-height: 1.15;
                     filter: none;
                 }

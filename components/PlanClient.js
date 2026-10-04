@@ -219,8 +219,8 @@ export default function PlanClient() {
                     font-weight: 800;
                     margin-bottom: 0.6rem;
                     background: linear-gradient(135deg, #FFFFFF 0%, #F5E6AB 50%, #D4AF37 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    /* -webkit-background-clip: text; */
+                    -webkit-text-fill-color: #111 !important;
                     line-height: 1.15;
                     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.9));
                 }

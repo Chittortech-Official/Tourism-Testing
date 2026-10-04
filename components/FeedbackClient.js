@@ -326,8 +326,8 @@ export default function FeedbackClient() {
                     font-size: clamp(2rem, 4vw, 3rem);
                     font-weight: 700;
                     background: linear-gradient(135deg, #ffffff 30%, #D4AF37 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    /* -webkit-background-clip: text; */
+                    -webkit-text-fill-color: #111 !important;
                     margin-bottom: 0.75rem;
                 }
                 .v-subtitle {

@@ -48,9 +48,9 @@ export default function FortDetailsClient() {
             className="fort-page"
         >
             {/* â•â•â• HERO SECTION â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
-            <section className="fort-hero">
-                <div className="hero-bg"></div>
-                <div className="hero-overlay"></div>
+            <section className="fort-title-section">
+                
+                
                 
                 <motion.div 
                     initial={{ y: 30, opacity: 0 }}
@@ -63,7 +63,7 @@ export default function FortDetailsClient() {
                     </button>
                     <span className="hero-eyebrow">{t("fort.hero.eyebrow")}</span>
                     <h1 className="hero-title">{t("fort.hero.title")}</h1>
-                    <p className="hero-desc">{t("fort.hero.desc")}</p>
+                    <p className="hero-desc" style={{ 'color': '#333 !important' }}>{t("fort.hero.desc")}</p>
                     
 
                 </motion.div>
@@ -181,9 +181,10 @@ export default function FortDetailsClient() {
                     font-family: var(--ff-serif);
                     font-weight: 700;
                     letter-spacing: -0.02em;
-                    background: linear-gradient(135deg, #111 0%, var(--gold) 50%, #d4af37 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    color: #111 !important;
+                    background: none !important;
+                    /* -webkit-background-clip: text; */
+                    -webkit-text-fill-color: #111 !important;
                     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
                 }
 
@@ -264,11 +265,45 @@ export default function FortDetailsClient() {
                     z-index: -1;
                 }
 
-                .hero-content {
-                    max-width: 900px;
-                    width: 100%;
-                    z-index: 10;
+                
+                .fort-title-section {
+                    padding: 10rem 1.5rem 3rem;
+                    background: #ffffff;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 5;
+                    position: relative;
                 }
+                .hero-content {
+                    max-width: 1000px;
+                    padding: 0 1.5rem;
+                    z-index: 10;
+                    width: 100%;
+                }
+                .page-gallery-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 1.5rem;
+                    padding: 0 1.5rem;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+                .p-gal-img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 16px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    transition: transform 0.4s ease, box-shadow 0.4s ease;
+                    display: block;
+                }
+                .p-gal-img:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+                }
+
 
                 .back-link,
                 .back-btn {
@@ -303,10 +338,14 @@ export default function FortDetailsClient() {
                 }
 
                 .hero-title {
-                    font-size: clamp(2.5rem, 8vw, 5rem);
-                    color: #333;
-                    margin-bottom: 2rem;
-                    text-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                    font-size: clamp(3.5rem, 10vw, 5rem);
+                    line-height: 1.1;
+                    margin-bottom: 1.5rem;
+                    background: none !important;
+                    -webkit-text-fill-color: #111 !important;
+                    color: #111 !important;
+                    text-shadow: none !important;
+                    filter: none !important;
                 }
 
                 .hero-desc {

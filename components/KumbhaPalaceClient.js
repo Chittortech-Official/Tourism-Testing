@@ -116,9 +116,10 @@ export default function KumbhaPalaceClient() {
                     font-family: var(--ff-serif);
                     font-weight: 700;
                     letter-spacing: -0.01em;
-                    background: linear-gradient(135deg, #111 0%, var(--gold) 50%, #d4af37 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    color: #111 !important;
+                    background: none !important;
+                    /* -webkit-background-clip: text; */
+                    -webkit-text-fill-color: #111 !important;
                     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
                     position: relative;
                 }
@@ -193,11 +194,45 @@ export default function KumbhaPalaceClient() {
                     z-index: -1;
                 }
 
+                
+                .fort-title-section {
+                    padding: 10rem 1.5rem 3rem;
+                    background: #ffffff;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 5;
+                    position: relative;
+                }
                 .hero-content {
                     max-width: 1000px;
                     padding: 0 1.5rem;
                     z-index: 10;
+                    width: 100%;
                 }
+                .kumbha-gallery-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 1.5rem;
+                    padding: 0 1.5rem;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+                .k-gal-img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 16px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    transition: transform 0.4s ease, box-shadow 0.4s ease;
+                    display: block;
+                }
+                .k-gal-img:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+                }
+
 
                 .back-btn {
                     display: inline-flex;
@@ -236,10 +271,14 @@ export default function KumbhaPalaceClient() {
                 }
 
                 .hero-title {
-                    font-size: clamp(3.5rem, 12vw, 7.5rem);
-                    line-height: 1;
-                    margin-bottom: 2.5rem;
-                    text-shadow: 0 15px 40px rgba(0,0,0,0.6);
+                    font-size: clamp(3.5rem, 10vw, 5rem);
+                    line-height: 1.1;
+                    margin-bottom: 1.5rem;
+                    background: none !important;
+                    -webkit-text-fill-color: #111 !important;
+                    color: #111 !important;
+                    text-shadow: none !important;
+                    filter: none !important;
                 }
 
                 .hero-desc {
@@ -366,16 +405,8 @@ export default function KumbhaPalaceClient() {
             `}</style>
 
             {/* â•â•â• HERO SECTION â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
-            <section className="fort-hero">
-                <motion.div 
-                    style={{ 
-                        scale: heroScale,
-                        backgroundImage: "url('/Each page Pics/Fort pics/Rana Kumbha Palace.jpg')"
-                    }} 
-                    className="hero-bg"
-                ></motion.div>
-                <div className="hero-overlay"></div>
-                
+            
+            <section className="fort-title-section">
                 <motion.div 
                     variants={containerVariants}
                     className="hero-content"
@@ -387,7 +418,7 @@ export default function KumbhaPalaceClient() {
                         <ArrowLeft size={18} /> {t("btn.back") || "Back"}
                     </motion.button>
                     <motion.span variants={itemVariants} className="hero-eyebrow">{t("kumbha.hero.eyebrow")}</motion.span>
-                    <motion.h1 variants={itemVariants} className="hero-title aura-heading">{t("kumbha.hero.title")}</motion.h1>
+                    <motion.h1 variants={itemVariants} className="hero-title">{t("kumbha.hero.title")}</motion.h1>
                     <motion.p variants={itemVariants} className="hero-desc" style={{ 'color': '#333 !important' }}>
                         {t("kumbha.hero.desc")?.split('. ').map((sentence, idx) => (
                             <motion.span 
@@ -400,9 +431,8 @@ export default function KumbhaPalaceClient() {
                         ))}
                     </motion.p>
                 </motion.div>
-                
-                {/* NO SCROLL INDICATOR */}
             </section>
+
 
 
 
@@ -442,55 +472,7 @@ export default function KumbhaPalaceClient() {
                     </div>
                 </motion.section>
 
-                {/* â•â•â• LAYOUT â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
-                <motion.section 
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    variants={containerVariants}
-                    id="layout" 
-                    className="fort-section"
-                >
-                    <div className="section-header">
-                        <motion.h2 variants={itemVariants} className="section-title aura-heading">{t("kumbha.section.layout")}</motion.h2>
-                        <motion.div variants={itemVariants} className="title-divider"></motion.div>
-                    </div>
-
-                    <div className="layout-showcase" style={{ marginBottom: '6rem' }}>
-                            <motion.div 
-                                variants={itemVariants}
-                                whileHover={{ scale: 1.02 }}
-                                className="glass-panel"
-                                style={{ padding: '0', overflow: 'hidden', height: 'auto', border: '1px solid rgba(212, 175, 55, 0.4)', boxShadow: '0 40px 80px rgba(0,0,0,0.8)', aspectRatio: '16/10' }}
-                            >
-                                <Image 
-                                    src="/images/kumbha-palace-layout.jpg" 
-                                    alt="Rana Kumbha Palace layout"
-                                    style={{ objectFit: "cover",  width: '100%', height: '100%', objectFit: 'cover', opacity: 0.9 }}
-                                 width={1200} height={800}/>
-                            </motion.div>
-                        </div>
-                        <div className="glass-panel" style={{ textAlign: 'center' }}>
-                        <motion.p variants={itemVariants} style={{ 'color': '#333 !important', fontSize: '1.25rem' }}>
-                            {t("kumbha.layout.p1")?.split('. ').map((sentence, idx) => (
-                                <motion.span key={idx} variants={sentenceVariants} style={{ display: 'inline-block', marginRight: '0.4em' }}>
-                                    {sentence}{idx < t("kumbha.layout.p1").split('. ').length - 1 ? '.' : ''}
-                                </motion.span>
-                            ))}
-                        </motion.p>
-                        
-                        <motion.div 
-                            variants={itemVariants}
-                            className={`audio-bar ${playingAudio === 'layout' ? 'playing' : ''}`}
-                            onClick={() => handleAudioPlay('layout', 'kumbha.layout.p1')}
-                        >
-                            {playingAudio === 'layout' ? <Waveform /> : <Play size={28} fill="currentColor" />}
-                            <span style={{ fontWeight: 800, letterSpacing: '3px', textTransform: 'uppercase', fontSize: '1rem' }}>
-                                {playingAudio === 'layout' ? t("fort.audio.playing") : t("fort.audio.listen")}
-                            </span>
-                        </motion.div>
-                    </div>
-                </motion.section>
+                
 
                 {/* â•â•â• CELLARS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
                 <motion.section 
@@ -555,7 +537,30 @@ export default function KumbhaPalaceClient() {
                 </motion.section>
             
                 {/* ═══ GALLERY ══════════════════════════ */}
-                <ImageGallery images={[]} />
+                
+                {/* ═══ GALLERY ══════════════════════════ */}
+                <motion.section 
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                    variants={containerVariants}
+                    className="fort-section"
+                    style={{ paddingTop: 0, paddingBottom: '6rem' }}
+                >
+                    <div className="section-header" style={{ marginBottom: '3.5rem' }}>
+                        <motion.h2 variants={itemVariants} className="section-title" style={{ fontSize: '2.5rem', background: 'none', WebkitTextFillColor: '#111', color: '#111', filter: 'none' }}>
+                            Gallery of Rana Kumbha Palace
+                        </motion.h2>
+                        <motion.div variants={itemVariants} className="title-divider"></motion.div>
+                    </div>
+                    <div className="kumbha-gallery-grid">
+                        <motion.img variants={itemVariants} src="/Rana Palace Images/Rana Kumbha Image 1.jpg" alt="Rana Kumbha Palace" className="k-gal-img" />
+                        <motion.img variants={itemVariants} src="/Rana Palace Images/Rana Kumbha Image 2.jpg" alt="Rana Kumbha Palace Details" className="k-gal-img" />
+                        <motion.img variants={itemVariants} src="/Rana Palace Images/Rana kumbha Image 3.jpg" alt="Architecture" className="k-gal-img" />
+                        <motion.img variants={itemVariants} src="/Rana Palace Images/Rana Kumbha Image 4.jpg" alt="Rana Kumbha Views" className="k-gal-img" />
+                    </div>
+                </motion.section>
+
             </main>
         </motion.div>
     );
