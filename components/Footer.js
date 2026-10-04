@@ -10,6 +10,8 @@ const navLinks = [
     { key: "nav.bookTickets", href: "https://eticket.webfront.in/asi/quick/chf", isExternal: true },
     { key: "nav.visitorInfo", href: "/visitor-info" },
     { key: "nav.guideList", href: "/guide-list" },
+    { key: "nav.itinerary", href: "/itinerary", fallback: "Itinerary" },
+    { key: "nav.feedback", href: "/feedback", fallback: "Feedback Hub" },
     { key: "nav.emergency", href: "/emergency" },
     { key: "nav.contactUs", href: "/contact-us" },
 ];
