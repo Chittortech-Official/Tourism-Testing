@@ -56,7 +56,13 @@ export default function HeroCarousel() {
               key={idx}
               className={`hc-slide ${isActive ? "hc-active" : ""}`}
             >
-              {/* 100% Full Edge-to-Edge Fill (Zero Left/Right Empty Space) */}
+              {/* Blurred Background */}
+              <div 
+                className="hc-bg-blur"
+                style={{ backgroundImage: `url('${img.src}')` }}
+              ></div>
+
+              {/* Contained Foreground Image (Full image visible) */}
               <div className="hc-fg-wrapper">
                 <img
                   src={img.src}
@@ -115,6 +121,7 @@ export default function HeroCarousel() {
           z-index: 1;
           transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
           will-change: opacity;
+          overflow: hidden;
         }
 
         .hc-active {
@@ -122,24 +129,37 @@ export default function HeroCarousel() {
           z-index: 2;
         }
 
+        /* Blurred Background Image */
+        .hc-bg-blur {
+          position: absolute;
+          inset: -10%;
+          width: 120%;
+          height: 120%;
+          background-size: cover;
+          background-position: center;
+          filter: blur(30px) brightness(0.5);
+          z-index: 1;
+        }
+
+        /* Foreground Image Wrapper */
         .hc-fg-wrapper {
           position: absolute;
           inset: 0;
           width: 100%;
           height: 100%;
-          margin: 0;
-          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 2;
         }
 
-        /* 100% FULL WIDTH & HEIGHT FILL — ZERO EMPTY SPACE ON LEFT OR RIGHT */
+        /* Foreground Image (Contained) */
         .hc-fg-img {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: contain;
           object-position: center;
-          margin: 0;
-          padding: 0;
-          border-radius: 0;
+          box-shadow: 0 0 50px rgba(0,0,0,0.6);
         }
 
         /* Slide dots positioned at bottom edge */

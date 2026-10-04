@@ -29,7 +29,7 @@ export default function ExploreClient() {
             dist: t("attr.fort.dist"),
             delay: 0,
             link: "/chittorgarh-fort",
-            image: "/Image_3.jpg",
+            image: "/hero_bg.jpg",
             bookingLink: "https://eticket.webfront.in/asi/quick/chf",
             category: "forts",
             badge: t("attr.fort.badge")
@@ -371,7 +371,7 @@ export default function ExploreClient() {
                 .fixed-bg {
                     position: fixed;
                     inset: 0;
-                    background: url('/Image_3.jpg') no-repeat center center / cover;
+                    background: url('/hero_bg.jpg') no-repeat center center / cover;
                     z-index: 0;
                     filter: brightness(1.08) contrast(1.05);
                     pointer-events: none;
@@ -439,11 +439,10 @@ export default function ExploreClient() {
                     font-family: var(--ff-display), serif;
                     font-weight: 800;
                     margin-bottom: 0.6rem;
-                    background: linear-gradient(135deg, #1C1B19 0%, #3A3732 50%, #8A682F 100%);
-                    /* -webkit-background-clip: text; */
-                    -webkit-text-fill-color: #111 !important;
+                    background: none;
+                    -webkit-text-fill-color: #A67C00 !important; /* Rich Dark Gold */
                     line-height: 1.15;
-                    filter: none;
+                    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
                 }
 
                 .subtitle-royal {
