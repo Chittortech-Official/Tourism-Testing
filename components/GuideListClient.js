@@ -171,10 +171,10 @@ export default function GuideListClient() {
                             </div>
                             <div style={{ textAlign: "left" }}>
                                 <div style={{ fontSize: isMobile ? "0.95rem" : "1.1rem", fontWeight: "700", color: "#fff" }}>
-                                    TRC Chittorgarh - Guide List.pdf
+                                    {t("guide.pdf.title") || "TRC Chittorgarh - Guide List.pdf"}
                                 </div>
                                 <div style={{ fontSize: "0.8rem", color: "#94a3b8" }}>
-                                    Official Document • 520 KB • Department of Tourism
+                                    {t("guide.pdf.desc") || "Official Document • 520 KB • Department of Tourism"}
                                 </div>
                             </div>
                         </div>

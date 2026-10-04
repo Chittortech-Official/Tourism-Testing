@@ -28,7 +28,7 @@ export default function StaysClient() {
                             transition={{ duration: 0.8 }}
                             style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontFamily: 'var(--ff-display)', color: '#2C2C2C' }}
                         >
-                            Premium Stays & Heritage Hotels
+                            {t("stays.hero.title") || "Premium Stays & Heritage Hotels"}
                         </motion.h1>
                         <motion.p 
                             initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ export default function StaysClient() {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             style={{ fontSize: '1.2rem', color: '#4A4A4A', marginTop: '1rem', maxWidth: '600px', margin: '1rem auto 0' }}
                         >
-                            Find the perfect accommodation near Chittorgarh Fort. Experience royal heritage, modern luxury, and breathtaking views.
+                            {t("stays.hero.subtitle") || "Find the perfect accommodation near Chittorgarh Fort. Experience royal heritage, modern luxury, and breathtaking views."}
                         </motion.p>
                     </header>
 
@@ -48,10 +48,9 @@ export default function StaysClient() {
                             border: '1px solid rgba(212, 175, 55, 0.3)',
                             textAlign: 'center'
                         }}>
-                            <h2 style={{ fontSize: '2rem', fontFamily: 'var(--ff-display)', color: '#D4AF37', marginBottom: '1rem' }}>Heritage Properties</h2>
+                            <h2 style={{ fontSize: '2rem', fontFamily: 'var(--ff-display)', color: '#D4AF37', marginBottom: '1rem' }}>{t("stays.heritage.title") || "Heritage Properties"}</h2>
                             <p style={{ color: '#2C2C2C', lineHeight: '1.6' }}>
-                                Immerse yourself in the rich culture and hospitality of Mewar.
-                                Detailed hotel listings and booking integrations are currently being updated to bring you the best experience.
+                                {t("stays.heritage.desc") || "Immerse yourself in the rich culture and hospitality of Mewar. Detailed hotel listings and booking integrations are currently being updated to bring you the best experience."}
                             </p>
                         </div>
                     </section>

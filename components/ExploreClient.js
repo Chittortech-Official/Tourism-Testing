@@ -252,15 +252,13 @@ export default function ExploreClient() {
         { id: 'shows', labelKey: 'exp.cat.shows', label: 'Shows & Events', icon: Ticket }
     ];
 
-    const filteredAttractions = useMemo(() => {
-        return attractionsData.filter(item => {
-            const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
-            const matchesSearch = searchQuery.trim() === '' ||
-                item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                item.desc.toLowerCase().includes(searchQuery.toLowerCase());
-            return matchesCategory && matchesSearch;
-        });
-    }, [activeCategory, searchQuery]);
+    const filteredAttractions = attractionsData.filter(item => {
+        const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
+        const matchesSearch = searchQuery.trim() === '' ||
+            item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.desc.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+    });
 
     return (
         <div className="explore-page">
