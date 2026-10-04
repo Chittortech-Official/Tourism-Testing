@@ -592,7 +592,9 @@ export default function VijayStambhClient() {
                         <motion.div  className="title-divider"></motion.div>
                     </div>
                     <div className="page-gallery-grid">
-                        <motion.img  src="/vijay_stambh.jpg" alt="Gallery Image" className="p-gal-img" />
+                        <motion.img src="/Vijay Stambh Images/Vijay Stambh 1.jpg" alt="Gallery Image" className="p-gal-img" />
+                        <motion.img src="/Vijay Stambh Images/Vijay Stambh 2.jpg" alt="Gallery Image" className="p-gal-img" />
+                        <motion.img src="/Vijay Stambh Images/Vijay Stambh 3.jpg" alt="Gallery Image" className="p-gal-img" />
                     </div>
                 </motion.section>
 

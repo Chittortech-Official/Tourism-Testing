@@ -131,7 +131,8 @@ export default function MenalClient() {
                         <motion.div  className="title-divider"></motion.div>
                     </div>
                     <div className="page-gallery-grid">
-                        <motion.img  src="/images/menal_hero.jpg" alt="Gallery Image" className="p-gal-img" />
+                        <motion.img src="/Meenal Waterfall Images/Menal Image 1.jpg" alt="Gallery Image" className="p-gal-img" />
+                        <motion.img src="/Meenal Waterfall Images/Menal Image 2.jpg" alt="Gallery Image" className="p-gal-img" />
                     </div>
                 </motion.section>
 
